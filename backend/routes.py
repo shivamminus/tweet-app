@@ -1,7 +1,7 @@
 from __main__ import db, app
 from forms import Signup, Login, createTweet, UpdateProfile
 from modals import User_mgmt, Post, Timeline, Retweet
-from flask import request, jsonify
+from flask import request, jsonify, redirect, url_for
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 import hashlib
 import json
@@ -100,8 +100,11 @@ def get_all_tweets():
     
     # print(all_tweets)
     tweets = Post.query.all()
-    l1= [{"id": i.id, "tweet": i.tweet, "timestamp": i.stamp} for i in tweets]
-    return {"tweets":l1}
+    result = Post.query.join(User_mgmt, Post.user_id == User_mgmt.id).add_columns(Post.id, User_mgmt.loginid, Post.tweet, Post.stamp).filter(Post.user_id == User_mgmt.id)
+    # qr = db.session.query(Post, User_mgmt).filter(Post.user_id == User_mgmt.id)
+    l2 = [{"id": i.id,"loginid":i.loginid, "tweet": i.tweet, "timestamp": i.stamp} for i in result]
+    # l1= [{"id": i.id, "tweet": i.tweet, "timestamp": i.stamp} for i in tweets]
+    return {"tweets":l2}
 
 
 
@@ -117,5 +120,121 @@ def get_all_users():
     # print(all_users)
     Users = User_mgmt.query.all()
     l1= [{"id": i.id, "firstname": i.firstname, "lastname": i.lastname, "image_file":i.image_file} for i in Users]
-    return {"Users":l1}
+    return {"Users":l1} 
 
+@app.route("/tweets/<username>/delete/<id>", methods=['DELETE'])
+@jwt_required()
+def delete_tweet(username, id):
+    current_user_loginid = get_jwt_identity()
+    if current_user_loginid == username:
+
+        tweet = Post.query.get(id)
+        author = User_mgmt.query.get(tweet.user_id)
+        # print(current_user_loginid)
+        # print(author.loginid)
+        if author.loginid == current_user_loginid:
+
+            db.session.delete(tweet)
+            db.session.commit()
+            result = Post.query.join(Timeline, Post.id == Timeline.post_id).add_columns(Timeline.id).filter(Post.id == Timeline.post_id)
+            # check timeline table 
+            return {"msg":f"Tweet {id} for the user : {username} deleted"}
+    return {"msg":"Cannot delete another tweet"}
+
+
+# post_id refers to the post which needs to be retweeted
+@app.route('/retweet/<post_id>',methods=['GET','POST'])
+@jwt_required()
+def retweet(post_id):
+    current_user_loginid = get_jwt_identity()
+    if request.form:
+        # below line fetched the Post which has id == post_id
+        post = Post.query.get_or_404(post_id)
+        print(post.id) #gives the id from the post which needs to be retweeted
+        if post:
+            # below line gives the retweet text which is added while retweeting
+            new_tweet = request.form['retweet']
+            if new_tweet:
+                # below query will fetch us the user whose query is retweeted
+                result = Post.query.join(User_mgmt, Post.user_id == User_mgmt.id).add_columns(User_mgmt.loginid).filter(Post.user_id == User_mgmt.id).order_by(Post('-id')).first()
+                for i in result:
+                    print("result:",i)
+                # x = datetime.datetime.now()
+                # currentTime = str(x.strftime("%d")) +" "+ str(x.strftime("%B")) +"'"+ str(x.strftime("%y")) + " "+ str(x.strftime("%I")) +":"+ str(x.strftime("%M")) +" "+ str(x.strftime("%p"))
+
+                # retweet = Retweet(tweet_id=post.id,user_id=result.id,retweet_stamp=currentTime,retweet_text=new_tweet)
+                # db.session.add(retweet)
+                # db.session.commit()
+
+                # to_timeline = Timeline(retweet_id=retweet.id)
+                # print(dir(to_timeline))
+                # print(to_timeline.retweet_id)
+                # db.session.add(to_timeline)
+                # db.session.commit()
+
+                # q_result = Post.query.join(User_mgmt, Post.user_id == User_mgmt.id).add_columns(User_mgmt.loginid).filter(Post.user_id == User_mgmt.id).first()
+                # q_result = db.session.query(Post).filter(Post.id == post_id).last()
+
+                return {"msg": f"{current_user_loginid} Retweeted @ "}
+
+    return {"msg":"could not retweet"}
+
+
+
+
+
+@app.route("/tweets/<loginid>", methods=['GET'])
+@jwt_required()
+def get_all_tweets_of_a_user(loginid):
+    current_user_loginid = get_jwt_identity()
+    joined_result = Post.query.join(User_mgmt, Post.user_id == User_mgmt.id).add_columns(User_mgmt.id, User_mgmt.loginid, Post.tweet, Post.stamp).all()
+    l1=[{"id": i.id, "loginid":i.loginid, "tweet":i.tweet, "timestamp":i.stamp} for i in joined_result]
+    user_tweets = {}
+    j = 0
+    for dict_item in l1:
+        for k,v in dict_item.items():
+            if k == 'loginid':
+                if loginid in v:
+                    user_tweets[j] = dict_item
+                    j+=1
+    return {"data":user_tweets,"total_records":len(user_tweets)}
+
+
+@app.route("/tweets/user/search/<loginid>", methods=['GET'])
+@jwt_required()
+def search_by_username(loginid):
+    current_user_loginid = get_jwt_identity()
+    users = User_mgmt.query.filter(User_mgmt.loginid.ilike(f"%{loginid}%")).all()
+    l1=[{"loginid":i.loginid} for i in users]
+    user_tweets = {}
+    j = 0
+    for dict_item in l1:
+        for k,v in dict_item.items():
+            if k == 'loginid':
+                if loginid in v:
+                    user_tweets[j] = dict_item
+                    j+=1
+    return {"data":user_tweets , "users_found": len(user_tweets)}
+
+
+@app.route("/tweets/forgot" , methods=['GET'])
+def search_by_full_username():
+    if request.form:
+        loginid = request.form['login-id']
+        user_found = User_mgmt.query.filter(User_mgmt.loginid == loginid).first()
+        if user_found:
+            print(user_found.loginid)
+            return {"forgot-password":f"http://localhost:5000/tweets/{user_found.loginid}/forgot"}
+    return {"msg":"User does not exist"}
+
+
+@app.route("/tweets/<loginid>/forgot" , methods=['PUT'])
+def reset_password(loginid):
+    if request.form:
+        new_password = request.form['new-password']
+        user_found = User_mgmt.query.filter(User_mgmt.loginid == loginid).first()
+        encrypted_password = hashlib.sha256(user_found.password.encode("utf-8")).hexdigest()
+        user_found.password = encrypted_password
+        db.session.commit()
+        return {"msg":"password updated"}
+    return {"msg":"password could not be updated!"}
