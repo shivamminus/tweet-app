@@ -1,3 +1,5 @@
+apispec==5.1.1
+apispec-webframeworks==0.5.2
 click==8.1.2
 colorama==0.4.4
 dnspython==2.2.1
@@ -12,9 +14,13 @@ idna==3.3
 itsdangerous==2.1.2
 Jinja2==3.1.1
 MarkupSafe==2.1.1
+marshmallow==3.15.0
 mysqlclient==2.1.0
+packaging==21.3
 PyJWT==2.3.0
 PyMySQL==1.0.2
+pyparsing==3.0.8
+PyYAML==6.0
 SQLAlchemy==1.4.36
 Werkzeug==2.1.1
 WTForms==3.0.1

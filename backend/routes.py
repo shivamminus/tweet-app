@@ -1,31 +1,76 @@
 from __main__ import db, app
 from forms import Signup, Login, createTweet, UpdateProfile
 from modals import User_mgmt, Post, Timeline, Retweet
-from flask import request, jsonify, redirect, url_for
+from flask import request, jsonify, redirect, url_for, render_template, send_from_directory
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 import hashlib
 import json
 import datetime
-
-
+from apispec import APISpec
+from apispec_webframeworks.flask import FlaskPlugin
+from apispec.ext.marshmallow import MarshmallowPlugin
+from flask_restx import Api
 jwt = JWTManager(app) # initialize JWTManager
 app.config['JWT_SECRET_KEY'] = 'Your_Secret_Key'
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = datetime.timedelta(days=1) # define the life span of the token
 
+api = Api(app)
+
+spec = APISpec(
+    title="Tweet-API-swagger-doc",
+    version="1.0.0",
+    openapi_version = "3.0.2",
+    plugins=[FlaskPlugin(), MarshmallowPlugin()]
+)
+
+@app.route("/api/swagger.json")
+def create_swagger_spec():
+    return jsonify(spec.to_dict())    
+
+
+@app.route('/docs')
+@app.route('/docs/<path:path>')
+def swagger_docs(path=None):
+    if not path or path == 'index.html':
+        return render_template('index.html', base_url='/docs')
+    else:
+        return send_from_directory('./swagger/static', path)
+
+
 @app.route("/", methods=['GET'])
 def myfun():
-    print("reached 1st url")
-    return {"msg":"success"}
+    
+     """welcome 
+        ---
+        get:
+            description: User will sign up giving the essential details for creating an account
+            responses:
+                200:
+                    description: return login id for the user
+                    content:
+                        application/json:
+    """
+    pass
 
 
 
-@app.route('/tweets/register',methods=['GET','POST'])
+@app.route('/tweets/register',methods=['POST'])
 def register():
 
     # add this to those routes which you want the user from going to if he/she is already logged in
     #if current_user.is_authenticated:
     #    return redirect(url_for(''))
-
+    """USER SIGN UP API 
+        ---
+        post:
+            description: User will sign up giving the essential details for creating an account
+            responses:
+                200:
+                    description: return login id for the user
+                    content:
+                        application/json:
+                            schema: User_mgmt
+    """
     if request.form:
         firstname = request.form['first-name']
         lastname = request.form['last-name']
@@ -38,7 +83,7 @@ def register():
         new_user = User_mgmt(email=email, firstname=firstname,lastname=lastname,password=password, loginid=loginid, contact=contact)
         db.session.add(new_user)
         db.session.commit()
-        return {"msg":new_user.loginid}
+        return {"msg":new_user.loginid}, 200
 
     return {"msg":"User Not Created"}, 400
    
@@ -238,3 +283,8 @@ def reset_password(loginid):
         db.session.commit()
         return {"msg":"password updated"}
     return {"msg":"password could not be updated!"}
+
+
+with app.test_request_context():
+    # spec.path(view=register)
+    spec.path(view=myfun)

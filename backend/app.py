@@ -5,7 +5,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 # from flask_login import LoginManager
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='swagger/templates')
 app.config['SECRET_KEY'] = '4YrzfpQ4kGXjuP6w'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] =False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://myrootuser:password123@localhost:3306/twitter'
