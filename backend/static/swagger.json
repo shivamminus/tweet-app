@@ -1,0 +1,150 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "description": "SHIVAM DUBEY",
+        "version": "1.0.0",
+        "title": "SWAGGER DOCUMENTATION FOR TWITTER APP",
+        "license": {
+            "name": "GITHUB",
+            "url": "https://github.com/shivamminus"
+        }
+    },
+    "tags": [
+        {
+            "name": "BACKEND APIS WITH JWT ENABLED",
+            "description": "Here you'll find all the APIs being used in making this Twitter App"
+        }
+    ],
+    "servers": [
+        {
+            "url": [
+                "/"
+            ]
+        }
+    ],
+    "components": {
+        "schemas": {
+            "User_mgmt": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "firstname": {
+                        "type": "string"
+                    },
+                    "lastname": {
+                        "type": "string"
+                    },
+                    "contact": {
+                        "type": "string"
+                    },
+                    "loginid": {
+                        "type": "string"
+                    },
+                    "image_file": {
+                        "type": "string"
+                    },
+                    "bg_file": {
+                        "type": "string"
+                    },
+                    "bio": {
+                        "type": "string"
+                    },
+                    "date": {
+                        "type": "string"
+                    },
+                    "bday": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Post": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "tweet": {
+                        "type": "string"
+                    },
+                    "stamp": {
+                        "type": "string"
+                    },
+                    "post_img": {
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "Retweet": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "interger"
+                    },
+                    "tweet_id": {
+                        "type": "interger"
+                    },
+                    "user_id": {
+                        "type": "interger"
+                    },
+                    "retweet_stamp": {
+                        "type": "string"
+                    },
+                    "retweet_text": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Timeline": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "post_id": {
+                        "type": "integer"
+                    },
+                    "retweet_id": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        "paths": {
+            "/tweets/register": {
+                "post": {
+                    "tags": [
+                        "REGISTER USER"
+                    ],
+                    "summary": "API TO ADD USER ",
+                    "requestBody": {
+                        "description": "DETAILS OF USER",
+                        "required": true,
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User_mgmt"
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "description": "OK"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
