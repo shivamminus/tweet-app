@@ -1,5 +1,4 @@
 from __main__ import db, app
-from forms import Signup, Login, createTweet, UpdateProfile
 from modals import User_mgmt, Post, Timeline, Retweet
 from flask import request, jsonify, redirect, url_for
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
