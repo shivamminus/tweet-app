@@ -94,4 +94,11 @@ if __name__ == '__main__':
     from flask_prom import monitor
     monitor(app, path="/metrics", http_server=True, port=9090, addr="127.0.0.1")
     import routes
-    app.run(debug = False, host="127.0.0.1",port=5000)
+    import modals
+    try:
+        print("Creating DB.. if not exiisting",db)
+        # db.drop_all()
+        db.create_all()
+    except Exception as e:
+        print("DB is not created!", e)
+    app.run(debug = True, host="127.0.0.1",port=5000)

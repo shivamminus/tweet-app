@@ -24,7 +24,6 @@ class Post(db.Model):
     tweet = db.Column(db.String(500),nullable=False)
     stamp = db.Column(db.String(20),nullable=False)
     post_img = db.Column(db.String(20))
-    
     user_id = db.Column(db.Integer,db.ForeignKey('user_mgmt.id'),nullable=False)
     retweets = db.relationship('Retweet',backref='ori_post',lazy=True)
     timeline = db.relationship('Timeline',backref='from_post',lazy=True)
@@ -45,3 +44,17 @@ class Timeline(db.Model):
     
     post_id = db.Column(db.Integer,db.ForeignKey('post.id'),default=None)
     retweet_id = db.Column(db.Integer,db.ForeignKey('retweet.id'),default=None)
+
+
+class Like(db.Model):
+    __tablename__ = 'likes'
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("user_mgmt.id"), nullable=False )
+    tweet_id = db.Column(db.Integer, db.ForeignKey("post.id"), nullable=False, )
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'user_id': self.user_id,
+            'tweet_id': self.tweet_id,
+        }
