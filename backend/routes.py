@@ -1,5 +1,5 @@
 from __main__ import db, app
-from modals import User_mgmt, Post, Timeline, Retweet
+from modals import User_mgmt, Post, Timeline, Retweet, Like
 from flask import request, jsonify, redirect, url_for
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 import hashlib
@@ -147,6 +147,7 @@ def delete_tweet(username, id):
 def retweet(post_id):
     current_user_loginid = get_jwt_identity()
     if request.form:
+        whose_post = request.form['loginid']
         # below line fetched the Post which has id == post_id
         post = Post.query.get_or_404(post_id)
         print(post.id) #gives the id from the post which needs to be retweeted
@@ -155,26 +156,23 @@ def retweet(post_id):
             new_tweet = request.form['retweet']
             if new_tweet:
                 # below query will fetch us the user whose query is retweeted
-                result = Post.query.join(User_mgmt, Post.user_id == User_mgmt.id).add_columns(User_mgmt.loginid).filter(Post.user_id == User_mgmt.id).order_by(Post('-id')).first()
+                result = Post.query.join(User_mgmt, Post.user_id == User_mgmt.id).add_columns(User_mgmt.id ,User_mgmt.loginid).filter(Post.user_id == User_mgmt.id).first()
                 for i in result:
                     print("result:",i)
-                # x = datetime.datetime.now()
-                # currentTime = str(x.strftime("%d")) +" "+ str(x.strftime("%B")) +"'"+ str(x.strftime("%y")) + " "+ str(x.strftime("%I")) +":"+ str(x.strftime("%M")) +" "+ str(x.strftime("%p"))
+                x = datetime.datetime.now()
+                currentTime = str(x.strftime("%d")) +" "+ str(x.strftime("%B")) +"'"+ str(x.strftime("%y")) + " "+ str(x.strftime("%I")) +":"+ str(x.strftime("%M")) +" "+ str(x.strftime("%p"))
 
-                # retweet = Retweet(tweet_id=post.id,user_id=result.id,retweet_stamp=currentTime,retweet_text=new_tweet)
-                # db.session.add(retweet)
-                # db.session.commit()
+                retweet = Retweet(tweet_id=post.id,user_id=result.id,retweet_stamp=currentTime,retweet_text=new_tweet)
+                db.session.add(retweet)
+                db.session.commit()
 
-                # to_timeline = Timeline(retweet_id=retweet.id)
-                # print(dir(to_timeline))
-                # print(to_timeline.retweet_id)
-                # db.session.add(to_timeline)
-                # db.session.commit()
+                to_timeline = Timeline(retweet_id=retweet.id, post_id=post.id)
+                print(dir(to_timeline))
+                print(to_timeline.retweet_id)
+                db.session.add(to_timeline)
+                db.session.commit()
 
-                # q_result = Post.query.join(User_mgmt, Post.user_id == User_mgmt.id).add_columns(User_mgmt.loginid).filter(Post.user_id == User_mgmt.id).first()
-                # q_result = db.session.query(Post).filter(Post.id == post_id).last()
-
-                return {"msg": f"{current_user_loginid} Retweeted @ "}
+                return {"msg": f"{current_user_loginid} Retweeted @ {whose_post}"}
 
     return {"msg":"could not retweet"}
 
@@ -237,3 +235,51 @@ def reset_password(loginid):
         db.session.commit()
         return {"msg":"password updated"}
     return {"msg":"password could not be updated!"}
+
+
+
+@app.route("/tweets/<username>/like", methods=['GET'])
+@jwt_required()
+def like_tweet(username):
+    current_user_loginid = get_jwt_identity()
+    if current_user_loginid == username:
+        if request.form:
+            print(request.form['already-liked'])
+            if request.form['already-liked'] !="false":
+                return {"msg":"already-liked"}
+        data = request.form
+        like = Like(
+            user_id = data["user_id"],
+            tweet_id = data["tweet_id"],
+        )
+        db.session.add(like)
+        db.session.commit()
+
+        return {"liked": str(like.to_dict())}
+    return {"msg":"invalid User"}
+
+
+
+@app.route("/tweets/<username>/update/<post_id>", methods=['PUT'])
+@jwt_required()
+def update_tweet(username, post_id):
+    current_user_loginid = get_jwt_identity()
+    if current_user_loginid == username:
+
+        if request.form:
+            updated_post_text = request.form['updated-text']
+            if request.files['file'].name:
+                post_img = request.files['file'].name   
+            x = datetime.datetime.now()
+            currentTime = str(x.strftime("%d")) +" "+ str(x.strftime("%B")) +"'"+ str(x.strftime("%y")) + " "+ str(x.strftime("%I")) +":"+ str(x.strftime("%M")) +" "+ str(x.strftime("%p"))
+            res = Post.query.filter(Post.id==post_id).first()
+            res.tweet = updated_post_text
+            if post_img:
+                res.post_img = post_img
+            # res.stamp = currentTime
+
+
+            db.session.commit()
+
+            return {"msg":"Post updated successfully!"}
+    return {"msg":"Can not update!"}
