@@ -15,7 +15,7 @@ python backend\app.py
 
 Once the Server is up, Note the directory of the log file generated.
 
-For Prometheus, Visit localhost:5001/prometheus
+For Prometheus, Visit localhost:9090/prometheus
 
 Now to integrate the ELK Stack
 
