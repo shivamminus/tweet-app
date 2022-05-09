@@ -1,0 +1,9 @@
+venv\
+__pycache__\
+elasticsearch-8.2.0-windows-x86_64/
+kibana-8.2.0-windows-x86_64/
+logstash-8.2.0-windows-x86_64/
+CitrixWorkspaceApp.exe
+elasticsearch-8.2.0-windows-x86_64.zip
+kibana-8.2.0-windows-x86_64.zip
+logstash-8.2.0-windows-x86_64.zip

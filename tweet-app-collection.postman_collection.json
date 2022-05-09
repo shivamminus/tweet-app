@@ -1,0 +1,725 @@
+{
+	"info": {
+		"_postman_id": "dc98e8e6-4385-48a7-aa0e-bbc975d67c5b",
+		"name": "tweet-app-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "health-check",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first-name",
+							"value": "Shivam",
+							"type": "text"
+						},
+						{
+							"key": "last-name",
+							"value": "Dubey",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "dubeyshivam044@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "login-id",
+							"value": "cicada",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "aezakmi",
+							"type": "text"
+						},
+						{
+							"key": "contact",
+							"value": "8901622316",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/tweets/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tweets",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first-name",
+							"value": "Natansh",
+							"type": "text"
+						},
+						{
+							"key": "last-name",
+							"value": "Upadhyay",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "natansh990@gmai.com",
+							"type": "text"
+						},
+						{
+							"key": "login-id",
+							"value": "nat",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "aezakmi",
+							"type": "text"
+						},
+						{
+							"key": "contact",
+							"value": "8901622316",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5002/tweets/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"tweets",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "login-id",
+							"value": "cicada",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "aezakmi",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "login-id",
+							"value": "nat",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "aezakmi",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create tweet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MTM5ODQyMCwianRpIjoiNjRhYTJlMmEtZDk4NS00ZDA1LTk2MzMtZDQ1MjY4OTkwM2I3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNpY2FkYSIsIm5iZiI6MTY1MTM5ODQyMCwiZXhwIjoxNjUxNDg0ODIwfQ.rHTrPmUOxxZVAGOSHvt95h7SkbeILLKhSFKJH4Ds6wg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "tweet",
+							"value": "made twitter app",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/J:/Downloads/docs/5_6266857777403004041.docx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/tweets/1/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tweets",
+						"1",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create tweet Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MTM5ODQyNywianRpIjoiYTNkY2E2NmMtZTY3Mi00Y2Q5LThhNWQtZDM4OWMwOTBjZDQwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im5hdCIsIm5iZiI6MTY1MTM5ODQyNywiZXhwIjoxNjUxNDg0ODI3fQ.ojKNU0M8D6GB_cux5rujMnGXuHOX-hGA33wTmPEb6dw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "tweet",
+							"value": "tweet from natansh",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/J:/Downloads/docs/5_6266857777403004041.docx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/tweets/2/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tweets",
+						"2",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all tweets",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MTM5NjY3NywianRpIjoiMTlkNWFkY2YtNmJiZi00MzYzLTliNTAtNTdmYzE1OWRlZDg4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im5hdCIsIm5iZiI6MTY1MTM5NjY3NywiZXhwIjoxNjUxNDgzMDc3fQ.49JoQXNLLGr3ueIjhZ4mUpPaW_3J7vREFrsqNF24lIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/tweets/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tweets",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MTM5NjY3NywianRpIjoiMTlkNWFkY2YtNmJiZi00MzYzLTliNTAtNTdmYzE1OWRlZDg4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im5hdCIsIm5iZiI6MTY1MTM5NjY3NywiZXhwIjoxNjUxNDgzMDc3fQ.49JoQXNLLGr3ueIjhZ4mUpPaW_3J7vREFrsqNF24lIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/tweets/users/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tweets",
+						"users",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Tweet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MTE2MDI4MiwianRpIjoiNmIyMmVlNzItZjhmNC00MWIxLTg2NzYtNTJiOGZlNzhjZTFkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im5hdCIsIm5iZiI6MTY1MTE2MDI4MiwiZXhwIjoxNjUxMjQ2NjgyfQ.sOd-2DbibzhSA3MOJm10DPvZF4nSu6B1qZ-0In0S1Ts",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/tweets/nat/delete/30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tweets",
+						"nat",
+						"delete",
+						"30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retweet",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MTM5OTEzOSwianRpIjoiN2I5MDUwYjItYjY2NC00OTAzLWFjMjEtNmIyY2EzODE5NzgxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNpY2FkYSIsIm5iZiI6MTY1MTM5OTEzOSwiZXhwIjoxNjUxNDg1NTM5fQ.syrlor9oQTD5mu-8ls-LvNr2WWEexnL-deg59x-e5qQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "retweet",
+							"value": "shivam retweeted nats post",
+							"type": "text"
+						},
+						{
+							"key": "loginid",
+							"value": "nat",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/retweet/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"retweet",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all tweets of a user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MTM5ODQyNywianRpIjoiYTNkY2E2NmMtZTY3Mi00Y2Q5LThhNWQtZDM4OWMwOTBjZDQwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im5hdCIsIm5iZiI6MTY1MTM5ODQyNywiZXhwIjoxNjUxNDg0ODI3fQ.ojKNU0M8D6GB_cux5rujMnGXuHOX-hGA33wTmPEb6dw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/tweets/cic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tweets",
+						"cic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search by username : gives list of users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MTM5ODQyNywianRpIjoiYTNkY2E2NmMtZTY3Mi00Y2Q5LThhNWQtZDM4OWMwOTBjZDQwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Im5hdCIsIm5iZiI6MTY1MTM5ODQyNywiZXhwIjoxNjUxNDg0ODI3fQ.ojKNU0M8D6GB_cux5rujMnGXuHOX-hGA33wTmPEb6dw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/tweets/user/search/n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tweets",
+						"user",
+						"search",
+						"n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgot passowrd",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "login-id",
+							"value": "cicada",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/tweets/forgot",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tweets",
+						"forgot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forget-password-redirect",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new-password",
+							"value": "password123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/tweets/cicada/forgot",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tweets",
+						"cicada",
+						"forgot"
+					],
+					"query": [
+						{
+							"key": "new-password",
+							"value": "password123",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prometheus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/metrics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"metrics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Like tweet",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MTM5OTEzOSwianRpIjoiN2I5MDUwYjItYjY2NC00OTAzLWFjMjEtNmIyY2EzODE5NzgxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNpY2FkYSIsIm5iZiI6MTY1MTM5OTEzOSwiZXhwIjoxNjUxNDg1NTM5fQ.syrlor9oQTD5mu-8ls-LvNr2WWEexnL-deg59x-e5qQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "tweet_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "already-liked",
+							"value": "false",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/tweets/cicada/like",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tweets",
+						"cicada",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Tweet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1MTM5OTEzOSwianRpIjoiN2I5MDUwYjItYjY2NC00OTAzLWFjMjEtNmIyY2EzODE5NzgxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImNpY2FkYSIsIm5iZiI6MTY1MTM5OTEzOSwiZXhwIjoxNjUxNDg1NTM5fQ.syrlor9oQTD5mu-8ls-LvNr2WWEexnL-deg59x-e5qQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "updated-text",
+							"value": "this text is updated by cicada",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/J:/Downloads/docs/Ledger_310300002492.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/tweets/cicada/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tweets",
+						"cicada",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logstash",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9200/flask-log/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"flask-log",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
