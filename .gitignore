@@ -7,3 +7,4 @@ CitrixWorkspaceApp.exe
 elasticsearch-8.2.0-windows-x86_64.zip
 kibana-8.2.0-windows-x86_64.zip
 logstash-8.2.0-windows-x86_64.zip
+frontend/node_modules/

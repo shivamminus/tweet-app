@@ -1,38 +1,286 @@
-2022-05-07 09:51:42,869 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
-2022-05-07 09:51:52,121 INFO app Thread-2 (process_request_thread) : HEALTH CHECK OK!!!!
-2022-05-07 09:51:52,126 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [07/May/2022 09:51:52] "GET / HTTP/1.1" 200 -
-2022-05-07 09:51:59,648 INFO app Thread-2 (process_request_thread) : API : /login triggered! 
-2022-05-07 09:51:59,806 INFO app Thread-2 (process_request_thread) : Login Successfull by user cicada
-2022-05-07 09:51:59,809 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [07/May/2022 09:51:59] "POST /login HTTP/1.1" 200 -
-2022-05-07 09:52:12,332 INFO app Thread-2 (process_request_thread) : API : /login triggered! 
-2022-05-07 09:52:12,335 INFO app Thread-2 (process_request_thread) : Login Successfull by user cicada
-2022-05-07 09:52:12,338 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [07/May/2022 09:52:12] "POST /login HTTP/1.1" 200 -
-2022-05-07 09:52:15,065 INFO app Thread-2 (process_request_thread) : API : /login triggered! 
-2022-05-07 09:52:15,067 INFO app Thread-2 (process_request_thread) : Login Successfull by user cicada
-2022-05-07 09:52:15,069 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [07/May/2022 09:52:15] "POST /login HTTP/1.1" 200 -
-2022-05-07 09:52:16,604 INFO app Thread-2 (process_request_thread) : API : /login triggered! 
-2022-05-07 09:52:16,607 INFO app Thread-2 (process_request_thread) : Login Successfull by user cicada
-2022-05-07 09:52:16,608 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [07/May/2022 09:52:16] "POST /login HTTP/1.1" 200 -
-2022-05-07 09:52:18,149 INFO app Thread-2 (process_request_thread) : API : /login triggered! 
-2022-05-07 09:52:18,151 INFO app Thread-2 (process_request_thread) : Login Successfull by user cicada
-2022-05-07 09:52:18,153 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [07/May/2022 09:52:18] "POST /login HTTP/1.1" 200 -
-2022-05-07 09:52:19,105 INFO app Thread-2 (process_request_thread) : API : /login triggered! 
-2022-05-07 09:52:19,107 INFO app Thread-2 (process_request_thread) : Login Successfull by user cicada
-2022-05-07 09:52:19,108 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [07/May/2022 09:52:19] "POST /login HTTP/1.1" 200 -
-2022-05-07 09:52:20,181 INFO app Thread-2 (process_request_thread) : API : /login triggered! 
-2022-05-07 09:52:20,186 INFO app Thread-2 (process_request_thread) : Login Successfull by user cicada
-2022-05-07 09:52:20,188 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [07/May/2022 09:52:20] "POST /login HTTP/1.1" 200 -
-2022-05-07 09:52:21,127 INFO app Thread-2 (process_request_thread) : API : /login triggered! 
-2022-05-07 09:52:21,131 INFO app Thread-2 (process_request_thread) : Login Successfull by user cicada
-2022-05-07 09:52:21,132 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [07/May/2022 09:52:21] "POST /login HTTP/1.1" 200 -
-2022-05-07 09:52:22,223 INFO app Thread-2 (process_request_thread) : API : /login triggered! 
-2022-05-07 09:52:22,226 INFO app Thread-2 (process_request_thread) : Login Successfull by user cicada
-2022-05-07 09:52:22,227 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [07/May/2022 09:52:22] "POST /login HTTP/1.1" 200 -
-2022-05-07 09:52:29,230 INFO app Thread-2 (process_request_thread) : API : /login triggered! 
-2022-05-07 09:52:29,233 INFO app Thread-2 (process_request_thread) : Login Successfull by user cicada
-2022-05-07 09:52:29,234 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [07/May/2022 09:52:29] "POST /login HTTP/1.1" 200 -
-2022-05-07 09:52:38,454 INFO app Thread-2 (process_request_thread) : API : /login triggered! 
-2022-05-07 09:52:38,470 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [07/May/2022 09:52:38] "POST /login HTTP/1.1" 200 -
-2022-05-07 09:52:51,246 INFO app Thread-2 (process_request_thread) : API : /login triggered! 
-2022-05-07 09:52:51,248 INFO app Thread-2 (process_request_thread) : Login Successfull by user cicada
-2022-05-07 09:52:51,249 INFO werkzeug Thread-2 (process_request_thread) : 127.0.0.1 - - [07/May/2022 09:52:51] "POST /login HTTP/1.1" 200 -
+2022-05-11 18:37:29,642 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 18:37:29] "OPTIONS /tweets/register HTTP/1.1" 200 -
+2022-05-11 18:37:29,668 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 18:37:29] "[31m[1mPOST /tweets/register HTTP/1.1[0m" 400 -
+2022-05-11 18:38:41,089 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2022-05-11 18:38:41,091 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 18:38:41,743 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 18:38:41,745 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 18:38:51,232 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 18:38:51] "OPTIONS /tweets/register HTTP/1.1" 200 -
+2022-05-11 18:38:51,264 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 18:38:51] "[31m[1mPOST /tweets/register HTTP/1.1[0m" 400 -
+2022-05-11 18:39:50,020 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 18:39:50,146 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 18:39:51,054 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 18:39:51,058 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 18:39:54,133 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 18:39:54] "OPTIONS /tweets/register HTTP/1.1" 200 -
+2022-05-11 18:39:54,171 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 18:39:54] "[31m[1mPOST /tweets/register HTTP/1.1[0m" 400 -
+2022-05-11 18:40:07,552 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2022-05-11 18:40:07,554 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 18:40:08,338 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 18:40:08,340 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 18:40:14,939 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 18:40:14] "OPTIONS /tweets/register HTTP/1.1" 200 -
+2022-05-11 18:40:14,968 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 18:40:14] "[31m[1mPOST /tweets/register HTTP/1.1[0m" 400 -
+2022-05-11 18:41:33,066 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 18:41:33,156 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 18:41:34,259 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 18:41:34,262 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 18:41:42,506 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 18:41:42,597 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 18:41:43,307 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 18:41:43,310 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 18:41:52,661 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 18:41:52,892 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 18:41:59,117 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2022-05-11 18:41:59,118 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 18:41:59,793 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 18:41:59,796 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 18:42:06,418 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 18:42:06] "OPTIONS /tweets/register HTTP/1.1" 200 -
+2022-05-11 18:42:06,436 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 18:42:06] "[31m[1mPOST /tweets/register HTTP/1.1[0m" 400 -
+2022-05-11 18:43:19,185 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [11/May/2022 18:43:19] "OPTIONS /tweets/register HTTP/1.1" 200 -
+2022-05-11 18:43:19,203 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [11/May/2022 18:43:19] "[31m[1mPOST /tweets/register HTTP/1.1[0m" 400 -
+2022-05-11 18:44:40,280 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 18:44:40,367 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 18:44:41,132 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 18:44:41,136 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 18:44:46,069 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2022-05-11 18:44:46,071 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 18:44:46,778 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 18:44:46,782 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 18:44:53,719 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 18:44:53] "OPTIONS /tweets/register HTTP/1.1" 200 -
+2022-05-11 18:44:53,751 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 18:44:53] "[31m[1mPOST /tweets/register HTTP/1.1[0m" 400 -
+2022-05-11 18:45:38,036 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [11/May/2022 18:45:38] "OPTIONS /tweets/register HTTP/1.1" 200 -
+2022-05-11 18:45:38,051 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [11/May/2022 18:45:38] "[31m[1mPOST /tweets/register HTTP/1.1[0m" 400 -
+2022-05-11 18:46:25,100 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [11/May/2022 18:46:25] "OPTIONS /tweets/register HTTP/1.1" 200 -
+2022-05-11 18:46:25,416 INFO app Thread-7 (process_request_thread) : USER CREATED SUCCESSFULLY! {id}
+2022-05-11 18:46:25,423 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [11/May/2022 18:46:25] "POST /tweets/register HTTP/1.1" 200 -
+2022-05-11 19:13:07,511 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:13:07] "OPTIONS /tweets/register HTTP/1.1" 200 -
+2022-05-11 19:13:07,650 INFO app Thread-9 (process_request_thread) : USER CREATED SUCCESSFULLY! {id}
+2022-05-11 19:13:07,653 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:13:07] "POST /tweets/register HTTP/1.1" 200 -
+2022-05-11 19:16:34,571 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 19:16:34,711 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 19:16:36,005 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 19:16:36,010 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 19:25:01,648 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:25:01] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-11 19:25:01,651 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 19:25:01,785 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:25:01] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2022-05-11 19:25:09,824 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:25:09] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-11 19:25:09,826 INFO app Thread-4 (process_request_thread) : API : /login triggered! 
+2022-05-11 19:25:09,839 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:25:09] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2022-05-11 19:26:07,706 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:26:07] "OPTIONS /tweets/register HTTP/1.1" 200 -
+2022-05-11 19:26:07,732 INFO app Thread-5 (process_request_thread) : USER CREATED SUCCESSFULLY! {id}
+2022-05-11 19:26:07,744 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:26:07] "POST /tweets/register HTTP/1.1" 200 -
+2022-05-11 19:27:00,612 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:27:00] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-11 19:27:00,617 INFO app Thread-7 (process_request_thread) : API : /login triggered! 
+2022-05-11 19:27:00,627 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:27:00] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2022-05-11 19:33:24,569 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 19:33:24,659 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 19:33:25,477 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 19:33:25,483 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 19:34:37,756 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 19:34:37,842 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 19:34:38,530 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 19:34:38,532 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 19:35:52,446 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2022-05-11 19:35:52,448 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 19:35:53,221 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 19:35:53,224 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 19:35:56,398 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:35:56] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-11 19:35:56,401 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 19:35:56,415 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:35:56] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2022-05-11 19:36:32,172 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:36:32] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-11 19:36:32,177 INFO app Thread-5 (process_request_thread) : API : /login triggered! 
+2022-05-11 19:36:32,202 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:36:32] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2022-05-11 19:36:41,023 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2022-05-11 19:36:41,026 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 19:36:41,809 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 19:36:41,812 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 19:36:46,563 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:36:46] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-11 19:36:46,567 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 19:36:46,584 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:36:46] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2022-05-11 19:37:34,672 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 19:37:34,760 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 19:37:36,081 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 19:37:36,086 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 19:37:47,222 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:37:47] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-11 19:37:47,228 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 19:37:47,342 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:37:47] "POST /login HTTP/1.1" 200 -
+2022-05-11 19:44:55,159 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:44:55] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-11 19:45:21,717 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:45:21] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-11 19:45:25,873 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:45:25] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-11 19:45:29,656 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:45:29] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-11 19:45:41,924 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:45:41] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-11 19:45:41,929 INFO app Thread-9 (process_request_thread) : API : /login triggered! 
+2022-05-11 19:45:41,953 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:45:41] "POST /login HTTP/1.1" 200 -
+2022-05-11 19:45:42,439 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:45:42] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-11 19:46:14,393 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:46:14] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-11 19:46:14,397 INFO app Thread-11 (process_request_thread) : API : /login triggered! 
+2022-05-11 19:46:14,409 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:46:14] "POST /login HTTP/1.1" 200 -
+2022-05-11 19:46:14,660 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:46:14] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-11 19:47:05,542 INFO werkzeug Thread-13 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:47:05] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-11 19:47:12,446 INFO werkzeug Thread-15 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:47:12] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-11 19:49:33,272 INFO werkzeug Thread-17 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:49:33] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-11 19:52:47,499 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:52:47] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-11 19:53:06,118 INFO werkzeug Thread-21 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:53:06] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-11 19:53:11,431 INFO werkzeug Thread-23 (process_request_thread) : 127.0.0.1 - - [11/May/2022 19:53:11] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-11 20:03:43,733 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 20:03:43,852 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:03:44,657 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:03:44,662 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:03:48,872 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2022-05-11 20:03:48,874 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:03:49,608 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:03:49,611 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:05:25,746 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:05:25,876 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:05:25] "POST /login HTTP/1.1" 200 -
+2022-05-11 20:06:12,249 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:06:12,315 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:06:12] "POST /login HTTP/1.1" 200 -
+2022-05-11 20:06:26,440 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:06:26,463 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:06:26] "POST /login HTTP/1.1" 200 -
+2022-05-11 20:06:47,916 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:06:47,934 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:06:47] "POST /login HTTP/1.1" 200 -
+2022-05-11 20:07:04,096 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:07:04,115 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:07:04] "POST /login HTTP/1.1" 200 -
+2022-05-11 20:07:27,581 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 20:07:27,803 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:07:31,917 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:07:31,926 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:07:31,977 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:07:32,032 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:07:32] "POST /login HTTP/1.1" 200 -
+2022-05-11 20:08:24,948 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:08:24,961 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:08:24] "POST /login HTTP/1.1" 200 -
+2022-05-11 20:10:59,423 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:10:59] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-11 20:10:59,428 INFO app Thread-4 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:10:59,453 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:10:59] "POST /login HTTP/1.1" 200 -
+2022-05-11 20:11:00,233 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:11:00] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-11 20:19:26,553 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 20:19:26,729 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:19:28,790 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:19:28,796 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:20:18,377 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:20:18,402 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:20:18] "POST /login HTTP/1.1" 200 -
+2022-05-11 20:21:14,838 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 20:21:15,111 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:21:16,686 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:21:16,691 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:21:31,396 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:21:31,467 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:21:31] "POST /login HTTP/1.1" 200 -
+2022-05-11 20:21:41,683 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2022-05-11 20:21:41,685 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:21:42,407 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:21:42,410 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:21:44,694 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:21:44,737 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:21:44] "POST /login HTTP/1.1" 200 -
+2022-05-11 20:22:33,542 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 20:22:33,694 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:22:34,522 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:22:34,525 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:23:40,012 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 20:23:40,108 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:23:40,845 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:23:40,847 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:23:48,002 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2022-05-11 20:23:48,005 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:23:48,694 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:23:48,697 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:23:52,392 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:23:52,558 WARNING app Thread-3 (process_request_thread) : Credentials do not match
+2022-05-11 20:23:52,561 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:23:52] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2022-05-11 20:24:22,839 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:24:22,841 WARNING app Thread-3 (process_request_thread) : Credentials do not match
+2022-05-11 20:24:22,843 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:24:22] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2022-05-11 20:24:25,834 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:24:25,837 WARNING app Thread-3 (process_request_thread) : Credentials do not match
+2022-05-11 20:24:25,839 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:24:25] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2022-05-11 20:26:04,017 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 20:26:04,113 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:26:05,499 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:26:05,507 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:26:11,399 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:26:11,433 WARNING app Thread-3 (process_request_thread) : Credentials do not match
+2022-05-11 20:26:11,435 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:26:11] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2022-05-11 20:27:15,048 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 20:27:15,141 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:27:15,864 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:27:15,867 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:27:20,611 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:27:20,687 WARNING app Thread-3 (process_request_thread) : Credentials do not match
+2022-05-11 20:27:20,691 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:27:20] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2022-05-11 20:30:25,672 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 20:30:25,766 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:30:26,745 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:30:26,757 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:30:30,161 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:30:30,257 WARNING app Thread-3 (process_request_thread) : Credentials do not match
+2022-05-11 20:30:30,263 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:30:30] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2022-05-11 20:33:52,797 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 20:33:52,948 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:33:56,807 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:33:56,813 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:34:00,175 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:34:00,260 WARNING app Thread-3 (process_request_thread) : Credentials do not match
+2022-05-11 20:34:00,266 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:34:00] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2022-05-11 20:34:31,417 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 20:34:31,508 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:34:32,390 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:34:32,400 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:34:34,110 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:34:34,183 WARNING app Thread-3 (process_request_thread) : Credentials do not match
+2022-05-11 20:34:34,187 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:34:34] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2022-05-11 20:36:09,276 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 20:36:09,365 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:36:10,179 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:36:10,185 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:37:03,056 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:37:03] "OPTIONS /tweets/register HTTP/1.1" 200 -
+2022-05-11 20:37:03,106 INFO app Thread-3 (process_request_thread) : USER CREATED SUCCESSFULLY! {id}
+2022-05-11 20:37:03,111 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:37:03] "POST /tweets/register HTTP/1.1" 200 -
+2022-05-11 20:37:10,327 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:37:10] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-11 20:37:10,333 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:37:10,372 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:37:10] "POST /login HTTP/1.1" 200 -
+2022-05-11 20:37:10,886 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:37:10] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-11 20:38:32,967 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 20:38:33,121 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:38:34,646 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:38:34,651 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:38:46,077 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2022-05-11 20:38:46,083 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:38:47,129 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:38:47,131 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:38:54,338 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:38:54] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-11 20:39:10,877 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:39:10] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-11 20:39:10,885 INFO app Thread-5 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:39:11,033 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:39:11] "POST /login HTTP/1.1" 200 -
+2022-05-11 20:39:11,550 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:39:11] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-11 20:39:37,546 INFO app Thread-7 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:39:37,587 WARNING app Thread-7 (process_request_thread) : Credentials do not match
+2022-05-11 20:39:37,593 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:39:37] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2022-05-11 20:39:49,905 INFO app Thread-7 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:39:49,908 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:39:49] "POST /login HTTP/1.1" 200 -
+2022-05-11 20:39:52,042 INFO app Thread-7 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:39:52,053 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:39:52] "POST /login HTTP/1.1" 200 -
+2022-05-11 20:40:00,870 INFO app Thread-7 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:40:00,872 WARNING app Thread-7 (process_request_thread) : Credentials do not match
+2022-05-11 20:40:00,874 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:40:00] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2022-05-11 20:41:05,048 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 20:41:05,257 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:41:06,910 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:41:06,919 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:41:12,289 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2022-05-11 20:41:12,290 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:41:13,344 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:41:13,350 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:41:19,882 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:41:19,957 WARNING app Thread-3 (process_request_thread) : Credentials do not match
+2022-05-11 20:41:19,963 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:41:19] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2022-05-11 20:41:46,813 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 20:41:46,909 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:41:47,772 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:41:47,776 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:41:49,918 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-11 20:41:50,059 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-11 20:41:52,028 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-11 20:41:52,034 INFO werkzeug MainThread :  * Debugger PIN: 632-598-749
+2022-05-11 20:41:53,005 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:41:53,166 INFO app Thread-3 (process_request_thread) : Login Successfull by user tttttt
+2022-05-11 20:41:53,172 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:41:53] "POST /login HTTP/1.1" 200 -
+2022-05-11 20:42:40,378 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:42:40] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-11 20:42:40,385 INFO app Thread-4 (process_request_thread) : API : /login triggered! 
+2022-05-11 20:42:40,429 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:42:40] "POST /login HTTP/1.1" 200 -
+2022-05-11 20:42:41,125 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [11/May/2022 20:42:41] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
