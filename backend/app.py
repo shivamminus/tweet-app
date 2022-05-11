@@ -11,7 +11,7 @@ app.config['SECRET_KEY'] = '4YrzfpQ4kGXjuP6w'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] =False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://myrootuser:password123@localhost:3306/twitter'
 db = SQLAlchemy(app)
-
+CORS(app)
 
 import socket
 
@@ -62,7 +62,7 @@ if __name__ == '__main__':
     'OIDC_RESOURCE_SERVER_ONLY': True
     })
     # oidc = OpenIDConnect(app)
-    CORS(app)
+    
     monitor(app, path="/metrics", http_server=True, port=9090, addr="127.0.0.1")
     import routes
     import modals

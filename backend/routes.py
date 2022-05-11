@@ -1,8 +1,15 @@
 from __main__ import db, app
 from telnetlib import EC
-from modals import User_mgmt, Post, Timeline, Retweet, Like
+from modals import User_mgmt, Post, Timeline, Retweet, Like, InvalidToken
 from flask import request, jsonify, redirect, url_for
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+from flask_jwt_extended import (
+    create_access_token,
+    create_refresh_token,
+    jwt_required,
+    get_jwt_identity,
+    get_jwt,
+)
 import hashlib
 import json
 import datetime
@@ -45,7 +52,7 @@ def register():
             loginid = request.data['loginid']
             password = request.data['password']
             contact = request.data['contact']
-            # password = hashlib.sha256(password.encode("utf-8")).hexdigest()
+            password = hashlib.sha256(password.encode("utf-8")).hexdigest()
             print(firstname, lastname, email, loginid, password, contact)
             new_user = User_mgmt(email=email, firstname=firstname,lastname=lastname,password=password, loginid=loginid, contact=contact)
             id = db.session.add(new_user)
@@ -54,8 +61,8 @@ def register():
             return {"msg":new_user.loginid}
     except Exception as e:
         app.logger.error("User Could not be created !", traceback.format_exc())
-        return {"err":"User Not Created"}, 400
-    return {"e":""}
+        return {"error":"User Not Created"}, 400
+    return {"error":"Could not register user"}
 
 
 
@@ -71,29 +78,61 @@ def login():
             loginid = request.data['loginid']
             password = request.data['password']
             print(password)
-            # rec_password = hashlib.sha256(password.encode("utf-8")).hexdigest()
+            rec_password = hashlib.sha256(password.encode("utf-8")).hexdigest()
             # print(rec_password)
             user_from_db = User_mgmt.query.filter_by(loginid=loginid).first()
 
             if user_from_db:
                 encrpted_password = hashlib.sha256(user_from_db.password.encode("utf-8")).hexdigest()
                 # print(encrpted_password, '\t', hashlib.sha256(user_from_db.password.encode("utf-8")).hexdigest())
-                print(encrpted_password,"\n",password)
-                if user_from_db.password == password:
+                print(encrpted_password,"\n",rec_password)
+                if encrpted_password == rec_password:
                     access_token = create_access_token(identity=user_from_db.loginid) # create jwt token
                     # print(access_token)
                     app.logger.info(f"Login Successfull by user {loginid}")
-                    return jsonify(access_token=access_token), 200
+                    return {"token":access_token}, 200
                 app.logger.warn("Credentials do not match")
-                return {"msg":"user creds do not match"}, 401
+                return {"error":"user creds do not match"}, 401
     except Exception as e:
         app.logger.error("USER NOT Registered", traceback.format_exc())
-    return {"msg":"invalid data"}
+    return {"error":"invalid data"}
 
-@app.route('/api/currentuser', methods=['GET'])
-def getcurrentuser():
-    return {"user": get_jwt_identity()}
+@app.route("/api/checkiftokenexpire", methods=["POST"])
+@jwt_required()
+def check_if_token_expire():
+    return jsonify({"success": True})
 
+
+@app.route("/api/refreshtoken", methods=["POST"])
+@jwt_required(refresh=True)
+def refresh():
+    identity = get_jwt_identity()
+    token = create_access_token(identity=identity)
+    return jsonify({"token": token})
+
+@app.route("/api/logout/access", methods=["POST"])
+@jwt_required()
+def access_logout():
+    jti = get_jwt()["jti"]
+    try:
+        invalid_token = InvalidToken(jti=jti)
+        invalid_token.save()
+        return jsonify({"success": True})
+    except Exception as e:
+        print(e)
+        return {"error": e.message}
+
+@app.route("/api/logout/refresh", methods=["POST"])
+@jwt_required()
+def refresh_logout():
+    jti = get_jwt()["jti"]
+    try:
+        invalid_token = InvalidToken(jti=jti)
+        invalid_token.save()
+        return jsonify({"success": True})
+    except Exception as e:
+        print(e)
+        return {"error": e.message}
 
 @app.route("/tweets/<loginid>/add", methods=['POST'])
 @jwt_required()
@@ -120,10 +159,10 @@ def create_tweet(loginid):
             db.session.add(to_timeline)
             db.session.commit()
             app.logger.info("Tweet Created and store in DB")
-            return {"msg":"tweet created"}
+            return jsonify({"success": "true"})
     except Exception as e:
         app.logger.error("TWEET COULD NOT BE CREATED", e.with_traceback())
-        return {"msg":"tweet could not be created!"}
+        return {"error":"tweet could not be created!"}
 
 @app.route("/tweets/all", methods=['GET'])
 @jwt_required()
@@ -148,7 +187,7 @@ def get_all_tweets():
         return {"tweets":l2}
     except Exception as e:
         app.logger.error("Could not fetch tweet: \n"+e.with_traceback())
-        return {"msg": {}}
+        return {"error": {}}
 
 
 @app.route("/tweets/users/all", methods=['GET'])
@@ -188,7 +227,7 @@ def delete_tweet(username, id):
                 return {"msg":f"Tweet {id} for the user : {username} deleted"}
     except Exception as e:
         app.logger.error("Cannot delete the Tweet: \n"+e.with_traceback())
-    return {"msg":"Cannot delete another tweet"}
+    return {"error":"Cannot delete another tweet"}
 
 # post_id refers to the post which needs to be retweeted
 @app.route('/retweet/<post_id>',methods=['GET','POST'])
@@ -225,7 +264,7 @@ def retweet(post_id):
                 app.logger.info(f"RETWEET SUCCESSFUL by USER: {current_user_loginid} of {whose_post}")
                 return {"msg": f"{current_user_loginid} Retweeted @ {whose_post}"}
 
-    return {"msg":"could not retweet"}
+    return {"error":"could not retweet"}
 
 
 
@@ -251,7 +290,7 @@ def get_all_tweets_of_a_user(loginid):
         return {"data":user_tweets,"total_records":len(user_tweets)}
     except Exception as e:
         app.logger.error("ERROR FETCHING DATA FROM DB: \n"+ e.with_traceback())
-        return {"msg": "Could Not find any Tweet"}
+        return {"error": "Could Not find any Tweet"}
 
 
 @app.route("/tweets/user/search/<loginid>", methods=['GET'])
@@ -274,7 +313,7 @@ def search_by_username(loginid):
         return {"data":user_tweets , "users_found": len(user_tweets)}
     except Exception as e:
         app.logger.error("Could not retreive Tweet: "+ e.with_traceback())
-        return {"msg": "Error Occured! Check logs for the details"}
+        return {"error": "Error Occured! Check logs for the details"}
 
 @app.route("/tweets/forgot" , methods=['GET'])
 def search_by_full_username():
@@ -287,10 +326,10 @@ def search_by_full_username():
             if user_found:
                 print(user_found.loginid)
                 return {"forgot-password":f"http://localhost:5000/tweets/{user_found.loginid}/forgot"}
-        return {"msg":"User does not exist"}
+        return {"error":"User does not exist"}
     except Exception as e:
         app.logger.error("Error Occured! \n"+e.with_traceback())
-        return {"msg":"Error Occured see logs for details"}
+        return {"error":"Error Occured see logs for details"}
 
 
 @app.route("/tweets/<loginid>/forgot" , methods=['PUT'])
@@ -304,7 +343,7 @@ def reset_password(loginid):
             user_found.password = encrypted_password
             db.session.commit()
             return {"msg":"password updated"}
-        return {"msg":"password could not be updated!"}
+        return {"error":"password could not be updated!"}
     except Exception as e:
         app.logger.error("Error Occured, Check Logs for detail\n"+e.with_traceback())
 
@@ -321,7 +360,7 @@ def like_tweet(username):
             if request.form:
                 print(request.form['already-liked'])
                 if request.form['already-liked'] !="false":
-                    return {"msg":"already-liked"}
+                    return {"error":"already-liked"}
             data = request.form
             like = Like(
                 user_id = data["user_id"],
@@ -331,10 +370,10 @@ def like_tweet(username):
             db.session.commit()
 
             return {"liked": str(like.to_dict())}
-        return {"msg":"invalid User"}
+        return {"error":"invalid User"}
     except Exception as e:
         app.logger.error("Error Occured, Check logs for detail\n"+e.with_traceback())
-        return {"msg":"Something went wrong!"}
+        return {"error":"Something went wrong!"}
 
 
 @app.route("/tweets/<username>/update/<post_id>", methods=['PUT'])
@@ -365,4 +404,4 @@ def update_tweet(username, post_id):
     except Exception as e:
         app.logger.error("Something Went Wrong! Check Logs for error!\n"+e.with_traceback())
     
-    return {"msg":"Can not update!"}
+    return {"error":"Can not update!"}

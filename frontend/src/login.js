@@ -2,11 +2,12 @@ import Axios from "axios";
 
 async function login(loginid, pwd) {
     const res = await Axios.post("http://localhost:5000/login", {loginid, pwd});
+    console.log(res)
     const {data} = await res;
     if (data.error) {
         return data.error
     } else {
-        console.log(data.access_token)
+        console.log(data)
         localStorage.setItem("token", data.token);
         localStorage.setItem("refreshToken", data.refreshToken);
         return true
@@ -16,15 +17,18 @@ async function login(loginid, pwd) {
 async function check() {
     const token = localStorage.getItem("token")
     try {
-        const res = await Axios.post("/api/checkiftokenexpire", {}, {
+        const res = await Axios.post("http://localhost:5000/api/checkiftokenexpire", {}, {
             headers: {
+                
                 Authorization: "Bearer " + token
-            }
+            },
+            
         })
+        console.log(res)
         const {data} = await res;
         return data.success
     } catch {
-        console.log("p")
+        console.log("catch of check() ")
         const refresh_token = localStorage.getItem("refreshToken")
         if (!refresh_token) {
             localStorage.removeItem("token")

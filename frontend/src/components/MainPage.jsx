@@ -11,7 +11,7 @@ class MainPage extends React.Component {
             this.setState({tweets: res.msg})
         });
         setTimeout(() => {
-            Axios.get("/api/getcurrentuser", {
+            Axios.get("/", {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`
                 }
@@ -41,9 +41,9 @@ class MainPage extends React.Component {
                             return (
                                 <TweetItem
                                     id={item.id}
-                                    title={item.title}
-                                    content={item.content}
-                                    author={item.user.username}
+                                    title={item.tweet}
+                                    content={item.twwet}
+                                    author={item.loginid}
                                     isOwner={this.state.currentUser.username === item.user.username}
                                     key={index}
                                 />

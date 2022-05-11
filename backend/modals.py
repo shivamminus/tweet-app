@@ -58,3 +58,18 @@ class Like(db.Model):
             'user_id': self.user_id,
             'tweet_id': self.tweet_id,
         }
+
+
+class InvalidToken(db.Model):
+    __tablename__ = "invalid_tokens"
+    id = db.Column(db.Integer, primary_key=True)
+    jti = db.Column(db.String(80), index=True)
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def is_invalid(cls, jti):
+        q = cls.query.filter_by(jti=jti).first()
+        return bool(q)
