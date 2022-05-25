@@ -1,7 +1,7 @@
 import Axios from "axios";
 
-async function login(loginid, pwd) {
-    const res = await Axios.post("http://localhost:5000/login", {loginid, pwd});
+async function login(loginid, password) {
+    const res = await Axios.post("http://localhost:5000/login", {loginid, password});
     console.log(res)
     const {data} = await res;
     if (data.error) {

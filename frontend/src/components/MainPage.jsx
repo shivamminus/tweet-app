@@ -7,7 +7,13 @@ class MainPage extends React.Component {
     state = {tweets: [], currentUser: {username: ""}}
 
     componentDidMount() {
-        Axios.get("http://localhost:5000/tweets/all").then(res => {
+        Axios.get("http://localhost:5000/tweets/all", 
+        {headers: {
+            'Authorization':`Bearer ${localStorage.getItem("token")}`,
+            'Access-Control-Allow-Headers':window.location.origin
+        }
+    })
+        .then(res => {
             this.setState({tweets: res.msg})
         });
         setTimeout(() => {

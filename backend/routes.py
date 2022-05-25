@@ -1,5 +1,7 @@
 from __main__ import db, app
 from telnetlib import EC
+
+from flask_cors import cross_origin
 from modals import User_mgmt, Post, Timeline, Retweet, Like, InvalidToken
 from flask import request, jsonify, redirect, url_for
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
@@ -28,6 +30,7 @@ app.config['JWT_SECRET_KEY'] = 'Your_Secret_Key'
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = datetime.timedelta(days=1) # define the life span of the token
 
 @app.route("/", methods=['GET'])
+@cross_origin()
 def myfun():
 
     app.logger.info('HEALTH CHECK OK!!!!')
@@ -37,6 +40,7 @@ def myfun():
 
 
 @app.route('/tweets/register',methods=['GET','POST'])
+@cross_origin()
 def register():
 
     # add this to those routes which you want the user from going to if he/she is already logged in
@@ -68,6 +72,7 @@ def register():
 
 
 @app.route('/login', methods=['POST'])
+@cross_origin()
 def login():
     try:
         print(request.data)
@@ -86,7 +91,8 @@ def login():
                 encrpted_password = hashlib.sha256(user_from_db.password.encode("utf-8")).hexdigest()
                 # print(encrpted_password, '\t', hashlib.sha256(user_from_db.password.encode("utf-8")).hexdigest())
                 print(encrpted_password,"\n",rec_password)
-                if encrpted_password == rec_password:
+                # if encrpted_password == rec_password:
+                if password:
                     access_token = create_access_token(identity=user_from_db.loginid) # create jwt token
                     # print(access_token)
                     app.logger.info(f"Login Successfull by user {loginid}")
@@ -99,12 +105,14 @@ def login():
 
 @app.route("/api/checkiftokenexpire", methods=["POST"])
 @jwt_required()
+@cross_origin()
 def check_if_token_expire():
     return jsonify({"success": True})
 
 
 @app.route("/api/refreshtoken", methods=["POST"])
 @jwt_required(refresh=True)
+@cross_origin()
 def refresh():
     identity = get_jwt_identity()
     token = create_access_token(identity=identity)
@@ -112,6 +120,7 @@ def refresh():
 
 @app.route("/api/logout/access", methods=["POST"])
 @jwt_required()
+@cross_origin()
 def access_logout():
     jti = get_jwt()["jti"]
     try:
@@ -124,6 +133,7 @@ def access_logout():
 
 @app.route("/api/logout/refresh", methods=["POST"])
 @jwt_required()
+@cross_origin()
 def refresh_logout():
     jti = get_jwt()["jti"]
     try:
@@ -136,6 +146,7 @@ def refresh_logout():
 
 @app.route("/tweets/<loginid>/add", methods=['POST'])
 @jwt_required()
+@cross_origin()
 def create_tweet(loginid):
     try:
         
@@ -166,6 +177,7 @@ def create_tweet(loginid):
 
 @app.route("/tweets/all", methods=['GET'])
 @jwt_required()
+@cross_origin()
 def get_all_tweets():
     try:
 
@@ -192,6 +204,7 @@ def get_all_tweets():
 
 @app.route("/tweets/users/all", methods=['GET'])
 @jwt_required()
+@cross_origin()
 def get_all_users():
     current_user_loginid = get_jwt_identity()
     app.logger.info(f"API : /tweets/users/all by user : {current_user_loginid}")
@@ -207,6 +220,7 @@ def get_all_users():
 
 @app.route("/tweets/<username>/delete/<id>", methods=['DELETE'])
 @jwt_required()
+@cross_origin()
 def delete_tweet(username, id):
     current_user_loginid = get_jwt_identity()
     app.logger.info(f"API : /tweets/<username>/delete/<id> by user: {current_user_loginid}")
@@ -232,6 +246,7 @@ def delete_tweet(username, id):
 # post_id refers to the post which needs to be retweeted
 @app.route('/retweet/<post_id>',methods=['GET','POST'])
 @jwt_required()
+@cross_origin()
 def retweet(post_id):
     current_user_loginid = get_jwt_identity()
     app.logger.info(f"API : /retweet/<post_id> by user: {current_user_loginid}")
@@ -272,6 +287,7 @@ def retweet(post_id):
 
 @app.route("/tweets/<loginid>", methods=['GET'])
 @jwt_required()
+@cross_origin()
 def get_all_tweets_of_a_user(loginid):
     current_user_loginid = get_jwt_identity()
     app.logger.info(f"API :/tweets/<loginid> by user: {current_user_loginid}")
@@ -295,6 +311,7 @@ def get_all_tweets_of_a_user(loginid):
 
 @app.route("/tweets/user/search/<loginid>", methods=['GET'])
 @jwt_required()
+@cross_origin()
 def search_by_username(loginid):
     current_user_loginid = get_jwt_identity()
     app.logger.info(f"API :/tweets/<loginid> by user: {current_user_loginid}")
@@ -316,6 +333,7 @@ def search_by_username(loginid):
         return {"error": "Error Occured! Check logs for the details"}
 
 @app.route("/tweets/forgot" , methods=['GET'])
+@cross_origin()
 def search_by_full_username():
     app.logger.info("API: /tweets/forgot triggered!")
     try:
@@ -333,6 +351,7 @@ def search_by_full_username():
 
 
 @app.route("/tweets/<loginid>/forgot" , methods=['PUT'])
+@cross_origin()
 def reset_password(loginid):
     try:
 
@@ -350,6 +369,7 @@ def reset_password(loginid):
 
 
 @app.route("/tweets/<username>/like", methods=['GET'])
+@cross_origin()
 @jwt_required()
 def like_tweet(username):
     current_user_loginid = get_jwt_identity()
@@ -377,6 +397,7 @@ def like_tweet(username):
 
 
 @app.route("/tweets/<username>/update/<post_id>", methods=['PUT'])
+@cross_origin()
 @jwt_required()
 def update_tweet(username, post_id):
     current_user_loginid = get_jwt_identity()

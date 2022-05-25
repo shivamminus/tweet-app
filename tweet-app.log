@@ -441,3 +441,325 @@
 2022-05-12 00:43:43,814 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [12/May/2022 00:43:43] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
 2022-05-12 00:43:43,827 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [12/May/2022 00:43:43] "[31m[1mPOST /api/checkiftokenexpire HTTP/1.1[0m" 422 -
 2022-05-12 00:43:49,482 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [12/May/2022 00:43:49] "[31m[1m{}OPTIONS /login HTTP/1.1[0m" 405 -
+2022-05-25 14:29:03,685 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2022-05-25 14:29:03,694 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-25 14:29:06,478 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-25 14:29:06,546 INFO werkzeug MainThread :  * Debugger PIN: 103-513-661
+2022-05-25 14:29:18,109 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:29:18] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 14:29:18,246 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:29:18] "[31m[1mPOST /api/checkiftokenexpire HTTP/1.1[0m" 422 -
+2022-05-25 14:29:18,665 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:29:18] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 14:29:18,687 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:29:18] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-25 14:29:18,870 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:29:18] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 14:29:18,881 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:29:18] "[31m[1mPOST /api/checkiftokenexpire HTTP/1.1[0m" 422 -
+2022-05-25 14:29:21,327 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:29:21] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 14:29:22,428 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:29:22] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 14:29:22,434 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:29:22] "[31m[1mPOST /api/checkiftokenexpire HTTP/1.1[0m" 422 -
+2022-05-25 14:29:27,683 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:29:27] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 14:29:27,717 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:29:27] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 14:29:27,726 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:29:27] "[31m[1mPOST /api/checkiftokenexpire HTTP/1.1[0m" 422 -
+2022-05-25 14:29:32,877 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:29:32] "[31m[1m{}OPTIONS /login HTTP/1.1[0m" 405 -
+2022-05-25 14:29:36,151 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:29:36] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-25 14:29:36,188 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-25 14:29:36,492 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:29:36] "POST /login HTTP/1.1" 200 -
+2022-05-25 14:29:38,309 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-25 14:29:38,333 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:29:38] "POST /login HTTP/1.1" 200 -
+2022-05-25 14:30:05,731 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:30:05] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-25 14:30:05,738 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-25 14:30:05,761 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:30:05] "POST /login HTTP/1.1" 200 -
+2022-05-25 14:30:07,628 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-25 14:30:07,655 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:30:07] "POST /login HTTP/1.1" 200 -
+2022-05-25 14:30:08,846 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-25 14:30:08,870 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:30:08] "POST /login HTTP/1.1" 200 -
+2022-05-25 14:30:14,866 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:30:14] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-25 14:30:14,873 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-25 14:30:14,897 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:30:14] "POST /login HTTP/1.1" 200 -
+2022-05-25 14:31:14,935 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:31:14] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 14:31:14,946 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:31:14] "[31m[1mPOST /api/checkiftokenexpire HTTP/1.1[0m" 422 -
+2022-05-25 14:31:14,980 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:31:14] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 14:31:17,602 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:31:17] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-25 14:31:17,609 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-25 14:31:17,818 WARNING app Thread-3 (process_request_thread) : Credentials do not match
+2022-05-25 14:31:17,825 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:31:17] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2022-05-25 14:31:19,722 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-25 14:31:19,727 WARNING app Thread-3 (process_request_thread) : Credentials do not match
+2022-05-25 14:31:19,729 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:31:19] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2022-05-25 14:31:21,243 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-25 14:31:21,248 WARNING app Thread-3 (process_request_thread) : Credentials do not match
+2022-05-25 14:31:21,250 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:31:21] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2022-05-25 14:32:00,073 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2022-05-25 14:32:00,076 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-25 14:32:01,567 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-25 14:32:01,577 INFO werkzeug MainThread :  * Debugger PIN: 103-513-661
+2022-05-25 14:32:03,180 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:32:03] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-25 14:32:03,197 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-25 14:32:03,278 WARNING app Thread-3 (process_request_thread) : Credentials do not match
+2022-05-25 14:32:03,284 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:32:03] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2022-05-25 14:32:33,800 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-25 14:32:34,048 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-25 14:32:42,343 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2022-05-25 14:32:42,347 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-25 14:32:43,823 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-25 14:32:43,828 INFO werkzeug MainThread :  * Debugger PIN: 103-513-661
+2022-05-25 14:32:44,858 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:32:44] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-25 14:32:44,936 INFO app Thread-3 (process_request_thread) : API : /login triggered! 
+2022-05-25 14:32:45,022 INFO app Thread-3 (process_request_thread) : Login Successfull by user cicada
+2022-05-25 14:32:45,027 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:32:45] "POST /login HTTP/1.1" 200 -
+2022-05-25 14:32:45,983 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:32:45] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 14:32:46,001 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:32:46] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 14:32:46,078 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:32:46] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 14:32:46,107 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:32:46] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-25 14:32:46,133 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:32:46] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 14:32:46,147 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:32:46] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 14:38:28,790 ERROR werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:38:28] code 400, message Bad request syntax ('{}')
+2022-05-25 14:38:28,791 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:38:28] "[35m[1mNone /api/checkiftokenexpire HTTP/0.9[0m" HTTPStatus.BAD_REQUEST -
+2022-05-25 14:52:48,272 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:52:48] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 14:52:48,277 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:52:48] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 14:52:48,443 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:52:48] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 14:52:48,456 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:52:48] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-25 14:52:48,489 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:52:48] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 14:52:48,495 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:52:48] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 14:52:54,856 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:52:54] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-25 14:52:55,309 INFO werkzeug Thread-7 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:52:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2022-05-25 14:58:29,273 ERROR werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:58:29] code 400, message Bad request syntax ('{}')
+2022-05-25 14:58:29,274 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/May/2022 14:58:29] "[35m[1mNone /api/checkiftokenexpire HTTP/0.9[0m" HTTPStatus.BAD_REQUEST -
+2022-05-25 15:02:07,710 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:02:07] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:02:07,714 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:02:07] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:02:07,828 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:02:07] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 15:02:07,838 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:02:07] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-05-25 15:02:07,842 INFO app Thread-10 (process_request_thread) : API : /tweets/all by user : cicada
+2022-05-25 15:02:07,864 INFO app Thread-10 (process_request_thread) : Successfully fetched the tweets
+2022-05-25 15:02:07,868 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:02:07] "GET /tweets/all HTTP/1.1" 200 -
+2022-05-25 15:02:07,887 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:02:07] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:02:07,891 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:02:07] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:02:46,333 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:02:46] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 15:02:46,369 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:02:46] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:02:46,374 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:02:46] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:02:46,381 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:02:46] "[31m[1m{}OPTIONS /tweets/all HTTP/1.1[0m" 405 -
+2022-05-25 15:02:46,397 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:02:46] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:02:46,408 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:02:46] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:03:18,943 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:18] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-25 15:03:42,065 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:42] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 15:03:42,889 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:42] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:03:42,893 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:42] "[31m[1mPOST /api/checkiftokenexpire HTTP/1.1[0m" 422 -
+2022-05-25 15:03:44,546 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:44] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 15:03:44,561 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:44] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:03:44,569 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:44] "[31m[1mPOST /api/checkiftokenexpire HTTP/1.1[0m" 422 -
+2022-05-25 15:03:46,439 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:46] "[31m[1m{}OPTIONS /login HTTP/1.1[0m" 405 -
+2022-05-25 15:03:47,358 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:47] "OPTIONS /login HTTP/1.1" 200 -
+2022-05-25 15:03:47,361 INFO app Thread-10 (process_request_thread) : API : /login triggered! 
+2022-05-25 15:03:47,364 INFO app Thread-10 (process_request_thread) : Login Successfull by user cicada
+2022-05-25 15:03:47,365 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:47] "POST /login HTTP/1.1" 200 -
+2022-05-25 15:03:47,585 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:47] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:03:47,590 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:47] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:03:47,615 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:47] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 15:03:47,626 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:47] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-05-25 15:03:47,631 INFO app Thread-10 (process_request_thread) : API : /tweets/all by user : cicada
+2022-05-25 15:03:47,637 INFO app Thread-10 (process_request_thread) : Successfully fetched the tweets
+2022-05-25 15:03:47,640 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:47] "GET /tweets/all HTTP/1.1" 200 -
+2022-05-25 15:03:47,645 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:47] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:03:47,653 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:47] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:03:55,557 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:55] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 15:03:55,588 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:55] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:03:55,594 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:55] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:03:55,602 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:55] "[31m[1m{}OPTIONS /tweets/all HTTP/1.1[0m" 405 -
+2022-05-25 15:03:55,616 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:55] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:03:55,623 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:03:55] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:05:04,115 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:05:04] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 15:05:04,149 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:05:04] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:05:04,154 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:05:04] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:05:04,167 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:05:04] "[31m[1m{}OPTIONS /tweets/all HTTP/1.1[0m" 405 -
+2022-05-25 15:05:04,183 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:05:04] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:05:04,202 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:05:04] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:05:19,156 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:05:19] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 15:05:19,186 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:05:19] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:05:19,193 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:05:19] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:05:19,200 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:05:19] "[31m[1m{}OPTIONS /tweets/all HTTP/1.1[0m" 405 -
+2022-05-25 15:05:19,218 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:05:19] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:05:19,234 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:05:19] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:05:55,276 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:05:55] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 15:05:55,297 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:05:55] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:05:55,302 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:05:55] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:05:55,310 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:05:55] "[31m[1m{}OPTIONS /tweets/all HTTP/1.1[0m" 405 -
+2022-05-25 15:05:55,353 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:05:55] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:05:55,362 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:05:55] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:07:50,886 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:07:50] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 15:07:50,962 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:07:50] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:07:50,972 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:07:50] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:07:50,997 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:07:50] "[31m[1m{}OPTIONS /tweets/all HTTP/1.1[0m" 405 -
+2022-05-25 15:07:51,055 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:07:51] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:07:51,090 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:07:51] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:09:35,982 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-25 15:09:36,068 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-25 15:09:36,992 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-25 15:09:36,996 INFO werkzeug MainThread :  * Debugger PIN: 103-513-661
+2022-05-25 15:09:41,853 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:09:41] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:09:41,858 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:09:41] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:09:42,002 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:09:42] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 15:09:42,013 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:09:42] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-05-25 15:09:42,018 INFO app Thread-3 (process_request_thread) : API : /tweets/all by user : cicada
+2022-05-25 15:09:42,068 INFO app Thread-3 (process_request_thread) : Successfully fetched the tweets
+2022-05-25 15:09:42,072 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:09:42] "GET /tweets/all HTTP/1.1" 200 -
+2022-05-25 15:09:42,078 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:09:42] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:09:42,082 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:09:42] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:11:13,324 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:13] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 15:11:13,358 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:13] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:11:13,362 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:13] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:11:13,369 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:13] "[31m[1m{}OPTIONS /tweets/all HTTP/1.1[0m" 405 -
+2022-05-25 15:11:13,385 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:13] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:11:13,395 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:13] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:11:22,858 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:22] "[31m[1mGET /tweets/all HTTP/1.1[0m" 401 -
+2022-05-25 15:11:27,347 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:27] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 15:11:27,375 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:27] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:11:27,381 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:27] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:11:27,391 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:27] "[31m[1m{}OPTIONS /tweets/all HTTP/1.1[0m" 405 -
+2022-05-25 15:11:27,406 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:27] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:11:27,419 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:27] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:11:30,220 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:30] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 15:11:30,293 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:30] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:11:30,303 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:30] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:11:30,328 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:30] "[31m[1m{}OPTIONS /tweets/all HTTP/1.1[0m" 405 -
+2022-05-25 15:11:30,356 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:30] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:11:30,385 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:30] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:11:33,150 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:33] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 15:11:33,178 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:33] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:11:33,184 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:33] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:11:33,193 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:33] "[31m[1m{}OPTIONS /tweets/all HTTP/1.1[0m" 405 -
+2022-05-25 15:11:33,210 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:33] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:11:33,217 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:11:33] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:12:01,771 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:12:01] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 15:12:01,806 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:12:01] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:12:01,812 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:12:01] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:12:01,824 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:12:01] "[31m[1m{}OPTIONS /tweets/all HTTP/1.1[0m" 405 -
+2022-05-25 15:12:01,848 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:12:01] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:12:01,858 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:12:01] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:12:09,065 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:12:09] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 15:12:09,089 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:12:09] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:12:09,095 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:12:09] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:12:09,105 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:12:09] "[31m[1m{}OPTIONS /tweets/all HTTP/1.1[0m" 405 -
+2022-05-25 15:12:09,121 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:12:09] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:12:09,128 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:12:09] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:13:14,686 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:13:14] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 15:13:14,716 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:13:14] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:13:14,722 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:13:14] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:13:14,728 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:13:14] "[31m[1m{}OPTIONS /tweets/all HTTP/1.1[0m" 405 -
+2022-05-25 15:13:14,742 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:13:14] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:13:14,755 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:13:14] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 15:18:29,637 ERROR werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:18:29] code 400, message Bad request syntax ('{}')
+2022-05-25 15:18:29,638 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 15:18:29] "[35m[1mNone /api/checkiftokenexpire HTTP/0.9[0m" HTTPStatus.BAD_REQUEST -
+2022-05-25 22:12:08,111 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:12:08] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:12:08,122 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:12:08] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:12:09,015 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:12:09] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 22:12:09,067 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:12:09] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-05-25 22:12:09,083 INFO app Thread-10 (process_request_thread) : API : /tweets/all by user : cicada
+2022-05-25 22:12:09,122 INFO app Thread-10 (process_request_thread) : Successfully fetched the tweets
+2022-05-25 22:12:09,125 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:12:09] "GET /tweets/all HTTP/1.1" 200 -
+2022-05-25 22:12:09,264 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:12:09] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:12:09,276 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:12:09] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:12:17,940 ERROR werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:12:17] code 400, message Bad request syntax ('{}')
+2022-05-25 22:12:17,941 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:12:17] "[35m[1mNone /api/checkiftokenexpire HTTP/0.9[0m" HTTPStatus.BAD_REQUEST -
+2022-05-25 22:12:50,412 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:12:50] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:12:50,418 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:12:50] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:12:51,119 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:12:51] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 22:12:51,143 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:12:51] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-05-25 22:12:51,151 INFO app Thread-12 (process_request_thread) : API : /tweets/all by user : cicada
+2022-05-25 22:12:51,160 INFO app Thread-12 (process_request_thread) : Successfully fetched the tweets
+2022-05-25 22:12:51,163 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:12:51] "GET /tweets/all HTTP/1.1" 200 -
+2022-05-25 22:12:51,333 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:12:51] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:12:51,348 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:12:51] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:12:57,982 ERROR werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:12:57] code 400, message Bad request syntax ('{}')
+2022-05-25 22:12:57,983 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:12:57] "[35m[1mNone /api/checkiftokenexpire HTTP/0.9[0m" HTTPStatus.BAD_REQUEST -
+2022-05-25 22:13:06,116 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:13:06] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:13:06,125 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:13:06] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:13:06,763 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:13:06] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 22:13:06,789 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:13:06] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-05-25 22:13:06,797 INFO app Thread-14 (process_request_thread) : API : /tweets/all by user : cicada
+2022-05-25 22:13:06,805 INFO app Thread-14 (process_request_thread) : Successfully fetched the tweets
+2022-05-25 22:13:06,807 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:13:06] "GET /tweets/all HTTP/1.1" 200 -
+2022-05-25 22:13:06,931 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:13:06] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:13:06,945 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:13:06] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:13:08,005 ERROR werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:13:08] code 400, message Bad request syntax ('{}')
+2022-05-25 22:13:08,007 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:13:08] "[35m[1mNone /api/checkiftokenexpire HTTP/0.9[0m" HTTPStatus.BAD_REQUEST -
+2022-05-25 22:13:32,436 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:13:32] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:13:32,444 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:13:32] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:13:33,180 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:13:33] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 22:13:33,208 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:13:33] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-05-25 22:13:33,219 INFO app Thread-16 (process_request_thread) : API : /tweets/all by user : cicada
+2022-05-25 22:13:33,229 INFO app Thread-16 (process_request_thread) : Successfully fetched the tweets
+2022-05-25 22:13:33,232 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:13:33] "GET /tweets/all HTTP/1.1" 200 -
+2022-05-25 22:13:33,412 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:13:33] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:13:33,424 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:13:33] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:13:38,046 ERROR werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:13:38] code 400, message Bad request syntax ('{}')
+2022-05-25 22:13:38,047 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:13:38] "[35m[1mNone /api/checkiftokenexpire HTTP/0.9[0m" HTTPStatus.BAD_REQUEST -
+2022-05-25 22:14:19,916 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-25 22:14:20,368 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-25 22:14:30,953 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2022-05-25 22:14:30,962 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-25 22:14:33,195 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-25 22:14:33,210 INFO werkzeug MainThread :  * Debugger PIN: 103-513-661
+2022-05-25 22:23:51,661 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:23:51] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:23:51,698 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:23:51] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:23:52,372 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:23:52] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 22:23:52,382 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:23:52] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-05-25 22:23:52,400 INFO app Thread-4 (process_request_thread) : API : /tweets/all by user : cicada
+2022-05-25 22:23:52,505 INFO app Thread-4 (process_request_thread) : Successfully fetched the tweets
+2022-05-25 22:23:52,511 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:23:52] "GET /tweets/all HTTP/1.1" 200 -
+2022-05-25 22:23:52,645 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:23:52] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:23:52,656 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:23:52] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:23:53,794 ERROR werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:23:53] code 400, message Bad request syntax ('{}')
+2022-05-25 22:23:53,795 INFO werkzeug Thread-4 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:23:53] "[35m[1mNone /api/checkiftokenexpire HTTP/0.9[0m" HTTPStatus.BAD_REQUEST -
+2022-05-25 22:24:27,728 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\app.py', reloading
+2022-05-25 22:24:27,891 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-25 22:24:33,569 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-25 22:24:33,575 INFO werkzeug MainThread :  * Debugger PIN: 103-513-661
+2022-05-25 22:24:38,679 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:24:38] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:24:38,688 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:24:38] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:24:39,753 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:24:39] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 22:24:39,787 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:24:39] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-05-25 22:24:39,795 INFO app Thread-3 (process_request_thread) : API : /tweets/all by user : cicada
+2022-05-25 22:24:39,915 INFO app Thread-3 (process_request_thread) : Successfully fetched the tweets
+2022-05-25 22:24:39,919 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:24:39] "GET /tweets/all HTTP/1.1" 200 -
+2022-05-25 22:24:40,087 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:24:40] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:24:40,098 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:24:40] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:24:43,854 ERROR werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:24:43] code 400, message Bad request syntax ('{}')
+2022-05-25 22:24:43,855 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:24:43] "[35m[1mNone /api/checkiftokenexpire HTTP/0.9[0m" HTTPStatus.BAD_REQUEST -
+2022-05-25 22:25:42,184 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:25:42] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:25:42,193 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:25:42] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:25:43,005 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:25:43] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 22:25:43,092 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:25:43] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-05-25 22:25:43,113 INFO app Thread-5 (process_request_thread) : API : /tweets/all by user : cicada
+2022-05-25 22:25:43,125 INFO app Thread-5 (process_request_thread) : Successfully fetched the tweets
+2022-05-25 22:25:43,128 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:25:43] "GET /tweets/all HTTP/1.1" 200 -
+2022-05-25 22:25:43,270 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:25:43] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:25:43,283 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:25:43] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:25:43,926 ERROR werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:25:43] code 400, message Bad request syntax ('{}')
+2022-05-25 22:25:43,927 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:25:43] "[35m[1mNone /api/checkiftokenexpire HTTP/0.9[0m" HTTPStatus.BAD_REQUEST -
+2022-05-25 22:27:53,048 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-25 22:27:53,343 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-25 22:27:56,012 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-25 22:27:56,021 INFO werkzeug MainThread :  * Debugger PIN: 103-513-661
+2022-05-25 22:28:01,590 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-25 22:28:01,810 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-25 22:28:04,555 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-25 22:28:04,566 INFO werkzeug MainThread :  * Debugger PIN: 103-513-661
+2022-05-25 22:28:46,119 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\routes.py', reloading
+2022-05-25 22:28:46,313 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-25 22:28:48,640 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-25 22:28:48,652 INFO werkzeug MainThread :  * Debugger PIN: 103-513-661
+2022-05-25 22:29:40,993 INFO werkzeug MainThread :  * Detected change in 'J:\\development\\tweet-app\\backend\\app.py', reloading
+2022-05-25 22:29:41,303 INFO werkzeug MainThread :  * Restarting with stat
+2022-05-25 22:29:43,903 WARNING werkzeug MainThread :  * Debugger is active!
+2022-05-25 22:29:43,912 INFO werkzeug MainThread :  * Debugger PIN: 103-513-661
+2022-05-25 22:29:46,834 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:29:46] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:29:46,845 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:29:46] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:29:47,770 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:29:47] "[31m[1m{}OPTIONS /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-05-25 22:29:47,824 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:29:47] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-05-25 22:29:47,842 INFO app Thread-3 (process_request_thread) : API : /tweets/all by user : cicada
+2022-05-25 22:29:47,955 INFO app Thread-3 (process_request_thread) : Successfully fetched the tweets
+2022-05-25 22:29:47,957 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:29:47] "GET /tweets/all HTTP/1.1" 200 -
+2022-05-25 22:29:48,047 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:29:48] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:29:48,058 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:29:48] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-05-25 22:29:54,310 ERROR werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:29:54] code 400, message Bad request syntax ('{}')
+2022-05-25 22:29:54,311 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:29:54] "[35m[1mNone /api/checkiftokenexpire HTTP/0.9[0m" HTTPStatus.BAD_REQUEST -
+2022-05-25 22:32:48,640 INFO app Thread-5 (process_request_thread) : API : /login triggered! 
+2022-05-25 22:32:48,664 INFO app Thread-5 (process_request_thread) : Login Successfull by user cicada
+2022-05-25 22:32:48,668 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [25/May/2022 22:32:48] "POST /login HTTP/1.1" 200 -
