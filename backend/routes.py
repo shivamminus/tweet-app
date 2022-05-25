@@ -2,6 +2,7 @@ from __main__ import db, app
 from telnetlib import EC
 
 from flask_cors import cross_origin
+from pyparsing import identbodychars
 from modals import User_mgmt, Post, Timeline, Retweet, Like, InvalidToken
 from flask import request, jsonify, redirect, url_for
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
@@ -94,9 +95,10 @@ def login():
                 # if encrpted_password == rec_password:
                 if password:
                     access_token = create_access_token(identity=user_from_db.loginid) # create jwt token
+                    refresh_token = create_refresh_token(identity=user_from_db.loginid)
                     # print(access_token)
                     app.logger.info(f"Login Successfull by user {loginid}")
-                    return {"token":access_token}, 200
+                    return {"token":access_token, "refreshToken":refresh_token, 'loginid':user_from_db.loginid}, 200
                 app.logger.warn("Credentials do not match")
                 return {"error":"user creds do not match"}, 401
     except Exception as e:
@@ -157,10 +159,12 @@ def create_tweet(loginid):
         x = datetime.datetime.now()
         currentTime = str(x.strftime("%d")) +" "+ str(x.strftime("%B")) +"'"+ str(x.strftime("%y")) + " "+ str(x.strftime("%I")) +":"+ str(x.strftime("%M")) +" "+ str(x.strftime("%p"))
         print(currentTime)
+
         if request.data:
-            tweet = request.form['tweet']
+            request.data = ast.literal_eval(request.data.decode(encoding="utf-8"))
+            tweet = request.data['tweet']
             stamp = currentTime
-            post_img = request.files['file'].name
+            post_img = request.data['file']
             user_id = current_user_loginid
             print(tweet,stamp, post_img,user_id)
             post = Post(tweet=tweet, stamp=currentTime, post_img=post_img, user_id=loginid)

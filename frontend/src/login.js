@@ -1,7 +1,8 @@
 import Axios from "axios";
+import { base_url } from "./config";
 
 async function login(loginid, password) {
-    const res = await Axios.post("http://localhost:5000/login", {loginid, password});
+    const res = await Axios.post(base_url+"/login", {loginid, password});
     console.log(res)
     const {data} = await res;
     if (data.error) {
@@ -10,6 +11,7 @@ async function login(loginid, password) {
         console.log(data)
         localStorage.setItem("token", data.token);
         localStorage.setItem("refreshToken", data.refreshToken);
+        localStorage.setItem("loginid", data.loginid);
         return true
     }
 }
@@ -17,9 +19,9 @@ async function login(loginid, password) {
 async function check() {
     const token = localStorage.getItem("token")
     try {
-        const res = await Axios.post("http://localhost:5000/api/checkiftokenexpire", {}, {
+        const res = await Axios.post(base_url+"/api/checkiftokenexpire", {}, {
             headers: {
-                
+
                 Authorization: "Bearer " + token
             },
             
@@ -34,7 +36,7 @@ async function check() {
             localStorage.removeItem("token")
             return false;
         }
-        Axios.post("/api/refreshtoken", {}, {
+        Axios.post(base_url+"/api/refreshtoken", {}, {
             headers: {
                 Authorization: `Bearer ${refresh_token}`
             }
@@ -48,7 +50,7 @@ async function check() {
 function logout() {
     if (localStorage.getItem("token")) {
         const token = localStorage.getItem("token")
-        Axios.post("/api/logout/access", {}, {
+        Axios.post(base_url+"/api/logout/access", {}, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -62,7 +64,7 @@ function logout() {
     }
     if (localStorage.getItem("refreshToken")) {
         const refreshToken = localStorage.getItem("refreshToken")
-        Axios.post("/api/logout/refresh", {}, {
+        Axios.post(base_url+"/api/logout/refresh", {}, {
             headers: {
                 Authorization: `Bearer ${refreshToken}`
             }

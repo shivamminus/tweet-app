@@ -2,29 +2,40 @@ import React from "react";
 import TweetItem from "./TweetItem";
 import Axios from "axios";
 import AddTweet from "./AddTweet";
+import { base_url } from "../config";
 
 class MainPage extends React.Component {
-    state = {tweets: [], currentUser: {username: ""}}
+    constructor(props){
+        super(props)
+        this.state = {tweets: [], currentUser: {username: ""}}
+        
+    }
+
 
     componentDidMount() {
-        Axios.get("http://localhost:5000/tweets/all", 
+        Axios.get(base_url+"/tweets/all", 
         {headers: {
             'Authorization':`Bearer ${localStorage.getItem("token")}`,
             'Access-Control-Allow-Headers':window.location.origin
         }
     })
         .then(res => {
-            this.setState({tweets: res.msg})
+            // console.log("RESULT:",res.data.tweets)
+            this.setState({tweets: res.data.tweets})   
+            // console.log("RESULT1:",this.state.tweets) 
+            this.setState({currentUser:  {username: localStorage.getItem("loginid")}})
         });
-        setTimeout(() => {
-            Axios.get("/", {
+        setInterval(() => {
+            Axios.get(base_url+"/tweets/all", {
                 headers: {
-                    Authorization: `Bearer ${localStorage.getItem("token")}`
+                    Authorization: `Bearer ${localStorage.getItem("token")}`,
+                    'Access-Control-Allow-Headers':window.location.origin
                 }
             }).then(res => {
-                this.setState({currentUser: res.tweets})
+                this.setState({currentUser:  {username: localStorage.getItem("loginid")}})
+                this.setState({tweets: res.data.tweets})
             })
-        }, 500)
+        },5000 )
     }
 
     render() {
@@ -48,9 +59,9 @@ class MainPage extends React.Component {
                                 <TweetItem
                                     id={item.id}
                                     title={item.tweet}
-                                    content={item.twwet}
+                                    content={item.tweet}
                                     author={item.loginid}
-                                    isOwner={this.state.currentUser.username === item.user.username}
+                                    isOwner={this.state.currentUser.username === item.loginid}
                                     key={index}
                                 />
                             );

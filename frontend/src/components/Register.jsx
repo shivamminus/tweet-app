@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import axios from "axios";
 import Alert from "./Alert";
 import {check} from "../login";
+import { base_url } from "../config";
 
 class Register extends Component {
     state = {err: ""};
@@ -15,7 +16,7 @@ class Register extends Component {
     register = (e) => {
         e.preventDefault();
         axios
-            .post("http://localhost:5000/tweets/register", {
+            .post(base_url+"/tweets/register", {
                 email: document.getElementById("email").value,
                 loginid: document.getElementById("login-id").value,
                 password: document.getElementById("password").value,
