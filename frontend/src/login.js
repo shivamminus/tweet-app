@@ -12,6 +12,7 @@ async function login(loginid, password) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("refreshToken", data.refreshToken);
         localStorage.setItem("loginid", data.loginid);
+        localStorage.setItem("user_id", data.user_id);
         return true
     }
 }

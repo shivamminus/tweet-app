@@ -1,6 +1,6 @@
 from __main__ import db, app
-from telnetlib import EC
 
+from werkzeug.security import generate_password_hash, check_password_hash
 from flask_cors import cross_origin
 from pyparsing import identbodychars
 from modals import User_mgmt, Post, Timeline, Retweet, Like, InvalidToken
@@ -57,7 +57,8 @@ def register():
             loginid = request.data['loginid']
             password = request.data['password']
             contact = request.data['contact']
-            password = hashlib.sha256(password.encode("utf-8")).hexdigest()
+            # password = hashlib.sha256(password.encode("utf-8")).hexdigest()
+            password = generate_password_hash(password)
             print(firstname, lastname, email, loginid, password, contact)
             new_user = User_mgmt(email=email, firstname=firstname,lastname=lastname,password=password, loginid=loginid, contact=contact)
             id = db.session.add(new_user)
@@ -88,7 +89,7 @@ def login():
             # print(rec_password)
             user_from_db = User_mgmt.query.filter_by(loginid=loginid).first()
 
-            if user_from_db:
+            if user_from_db and check_password_hash(user_from_db.password, password):
                 encrpted_password = hashlib.sha256(user_from_db.password.encode("utf-8")).hexdigest()
                 # print(encrpted_password, '\t', hashlib.sha256(user_from_db.password.encode("utf-8")).hexdigest())
                 print(encrpted_password,"\n",rec_password)
@@ -98,7 +99,7 @@ def login():
                     refresh_token = create_refresh_token(identity=user_from_db.loginid)
                     # print(access_token)
                     app.logger.info(f"Login Successfull by user {loginid}")
-                    return {"token":access_token, "refreshToken":refresh_token, 'loginid':user_from_db.loginid}, 200
+                    return {"token":access_token, "refreshToken":refresh_token, 'loginid':user_from_db.loginid, "user_id":user_from_db.id}, 200
                 app.logger.warn("Credentials do not match")
                 return {"error":"user creds do not match"}, 401
     except Exception as e:
@@ -373,8 +374,8 @@ def reset_password(loginid):
 
 
 @app.route("/tweets/<username>/like", methods=['GET'])
-@cross_origin()
 @jwt_required()
+@cross_origin()
 def like_tweet(username):
     current_user_loginid = get_jwt_identity()
     app.logger.info(f"API: /tweets/<username>/like by user: {current_user_loginid}")
