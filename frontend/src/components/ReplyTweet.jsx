@@ -4,7 +4,7 @@ import axios from "axios";
 import Alert from "./Alert";
 import { base_url } from "../config";
 
-class AddTweet extends React.Component {
+class ReplyTweet extends React.Component {
     state = {content: "<p>I have to edit this!</p>", titleErr: "", contentErr: "", formErr: ""}
 
     handleEditorChange = (content, editor) => {
@@ -46,13 +46,13 @@ class AddTweet extends React.Component {
     }
 
     render() {
-        return (<div className="w3-modal w3-animate-opacity" id="addTweet">
+        return (<div className="w3-modal w3-animate-opacity" id="replyTweet">
             <div className="w3-modal-content w3-card">
                 <header className="w3-container w3-blue">
                 <span className="w3-button w3-display-topright w3-hover-none w3-hover-text-white" onClick={() => {
-                    document.getElementById("addTweet").style.display = "none"
+                    document.getElementById("replyTweet").style.display = "none"
                 }}>X</span>
-                    <h2>Add tweet</h2>
+                    <h2>Reply tweet</h2>
                 </header>
                 <form className="w3-container" onSubmit={this.submitForm}>
                     {this.state.formErr.length > 0 && <Alert message={this.state.formErr}/>}
@@ -96,4 +96,4 @@ class AddTweet extends React.Component {
     }
 }
 
-export default AddTweet
+export default ReplyTweet;

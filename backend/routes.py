@@ -160,15 +160,19 @@ def create_tweet(loginid):
         x = datetime.datetime.now()
         currentTime = str(x.strftime("%d")) +" "+ str(x.strftime("%B")) +"'"+ str(x.strftime("%y")) + " "+ str(x.strftime("%I")) +":"+ str(x.strftime("%M")) +" "+ str(x.strftime("%p"))
         print(currentTime)
-
+        post_img = 'default.jpg'
         if request.data:
             request.data = ast.literal_eval(request.data.decode(encoding="utf-8"))
             tweet = request.data['tweet']
+            title = request.data['title']
             stamp = currentTime
-            post_img = request.data['file']
+            # if request.data['']:
+            #     post_img = request.data['tweet']
             user_id = current_user_loginid
             print(tweet,stamp, post_img,user_id)
-            post = Post(tweet=tweet, stamp=currentTime, post_img=post_img, user_id=loginid)
+
+            post = Post(tweet=tweet, stamp=currentTime, post_img=post_img, user_id=loginid, tweet_title=title, like_count=0)
+            print(f"loginid: {loginid} Like Count {post.like_count}")
             db.session.add(post)
             db.session.commit()
             to_timeline = Timeline(post_id=post.id)
@@ -177,8 +181,8 @@ def create_tweet(loginid):
             app.logger.info("Tweet Created and store in DB")
             return jsonify({"success": "true"})
     except Exception as e:
-        app.logger.error("TWEET COULD NOT BE CREATED", e.with_traceback())
-        return {"error":"tweet could not be created!"}
+        app.logger.error("TWEET COULD NOT BE CREATED",traceback.format_exc())
+        return {"error":"tweet could not be created!"}, 500
 
 @app.route("/tweets/all", methods=['GET'])
 @jwt_required()
@@ -190,20 +194,20 @@ def get_all_tweets():
         app.logger.info(f"API : /tweets/all by user : {current_user_loginid}")
         print(current_user_loginid)
 
-        all_tweets = Post.query.all()
+        # all_tweets = Post.query.all()
         # tweet_dict = {}
         
         # print(all_tweets)
-        tweets = Post.query.all()
-        result = Post.query.join(User_mgmt, Post.user_id == User_mgmt.id).add_columns(Post.id, User_mgmt.loginid, Post.tweet, Post.stamp).filter(Post.user_id == User_mgmt.id)
+        # tweets = Post.query.all()
+        result = Post.query.join(User_mgmt, Post.user_id == User_mgmt.id).add_columns(Post.id, User_mgmt.loginid, Post.tweet, Post.stamp, Post.tweet_title, Post.like_count).filter(Post.user_id == User_mgmt.id)
         # qr = db.session.query(Post, User_mgmt).filter(Post.user_id == User_mgmt.id)
-        l2 = [{"id": i.id,"loginid":i.loginid, "tweet": i.tweet, "timestamp": i.stamp, "isOwner":i.loginid == current_user_loginid} for i in result]
+        l2 = [{"id": i.id,"loginid":i.loginid, "title":i.tweet_title, "tweet": i.tweet, "timestamp": i.stamp, "isOwner":i.loginid == current_user_loginid, "like_count":i.like_count} for i in result]
         # l1= [{"id": i.id, "tweet": i.tweet, "timestamp": i.stamp} for i in tweets]
         app.logger.info("Successfully fetched the tweets")
     
         return {"tweets":l2}
     except Exception as e:
-        app.logger.error("Could not fetch tweet: \n"+e.with_traceback())
+        app.logger.error("Could not fetch tweet: \n"+traceback.format_exc())
         return {"error": {}}
 
 
@@ -222,6 +226,9 @@ def get_all_users():
     Users = User_mgmt.query.all()
     l1= [{"id": i.id, "firstname": i.firstname, "lastname": i.lastname, "image_file":i.image_file} for i in Users]
     return {"Users":l1} 
+
+
+    
 
 @app.route("/tweets/<username>/delete/<id>", methods=['DELETE'])
 @jwt_required()
@@ -390,6 +397,7 @@ def like_tweet(username):
             like = Like(
                 user_id = data["user_id"],
                 tweet_id = data["tweet_id"],
+                like_count = None
             )
             db.session.add(like)
             db.session.commit()

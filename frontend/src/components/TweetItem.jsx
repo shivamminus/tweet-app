@@ -1,6 +1,8 @@
 import React from "react";
 import Axios from "axios";
 import { base_url } from "../config";
+import AddTweet from "./AddTweet";
+import ReplyTweet from "./ReplyTweet";
 
 function deleteTweet(tid) {
     Axios.delete(base_url+"/api/deletetweet/" + tid, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
@@ -60,7 +62,12 @@ function TweetItem(props) {
             </div>
             <footer className="w3-container w3-center w3-large">
 
-                <button className="w3-button">Reply</button>
+            
+                <button className="w3-button" onClick={() => {
+                        document.getElementById("replyTweet").style.display = "block"
+                    }}>Reply 
+                    </button>
+                    <ReplyTweet/>
             </footer>
         </div>
     );

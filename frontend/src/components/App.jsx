@@ -12,6 +12,14 @@ import NotFound from "./NotFound"
 import "./theme.css"
 
 function App() {
+    const clearCacheData = () => {
+        caches.keys().then((names) => {
+          names.forEach((name) => {
+            caches.delete(name);
+          });
+        });
+        alert('Complete Cache Cleared')
+      };
     let [login, setLogin] = React.useState(false);
 
     check().then(r => {

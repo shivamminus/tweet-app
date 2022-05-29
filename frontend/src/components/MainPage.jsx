@@ -16,7 +16,8 @@ class MainPage extends React.Component {
         Axios.get(base_url+"/tweets/all", 
         {headers: {
             'Authorization':`Bearer ${localStorage.getItem("token")}`,
-            'Access-Control-Allow-Headers':window.location.origin
+            'Access-Control-Allow-Headers':window.location.origin,
+            "Cache-Control": "no-store, no-cache"
         }
     })
         .then(res => {
@@ -29,7 +30,8 @@ class MainPage extends React.Component {
             Axios.get(base_url+"/tweets/all", {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
-                    'Access-Control-Allow-Headers':window.location.origin
+                    'Access-Control-Allow-Headers':window.location.origin,
+                    "Cache-Control": "no-store, no-cache"
                 }
             }).then(res => {
                 this.setState({currentUser:  {username: localStorage.getItem("loginid")}})
@@ -50,6 +52,7 @@ class MainPage extends React.Component {
                     }}>Add tweet
                     </button>
                 </div>
+                
                 <AddTweet/>
                 <div className="w3-container">
                     {this.state.tweets.length === 0 ?
@@ -58,7 +61,7 @@ class MainPage extends React.Component {
                             return (
                                 <TweetItem
                                     id={item.id}
-                                    title={item.tweet}
+                                    title={item.title}
                                     content={item.tweet}
                                     author={item.loginid}
                                     isOwner={this.state.currentUser.username === item.loginid}
