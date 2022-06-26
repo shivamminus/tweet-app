@@ -200,8 +200,16 @@ def get_all_tweets():
         # print(all_tweets)
         # tweets = Post.query.all()
         result = Post.query.join(User_mgmt, Post.user_id == User_mgmt.id).add_columns(Post.id, User_mgmt.loginid, Post.tweet, Post.stamp, Post.tweet_title, Post.like_count).filter(Post.user_id == User_mgmt.id)
+        
+        
+        liked = Like.query.join(Post, Post.user_id == Like.user_id).filter(Post.user_id==Like.user_id).all()
+
+        tweet_id_col = [i.tweet_id for i in liked]
+
+        print("TWEET ID COL", tweet_id_col)
+
         # qr = db.session.query(Post, User_mgmt).filter(Post.user_id == User_mgmt.id)
-        l2 = [{"id": i.id,"loginid":i.loginid, "title":i.tweet_title, "tweet": i.tweet, "timestamp": i.stamp, "isOwner":i.loginid == current_user_loginid, "like_count":i.like_count} for i in result]
+        l2 = [{"id": i.id,"loginid":i.loginid, "title":i.tweet_title, "tweet": i.tweet, "timestamp": i.stamp, "isOwner":i.loginid == current_user_loginid, "like_count":i.like_count, "already_liked": True if i.id in tweet_id_col else False} for i in result]
         # l1= [{"id": i.id, "tweet": i.tweet, "timestamp": i.stamp} for i in tweets]
         app.logger.info("Successfully fetched the tweets")
     
@@ -339,7 +347,11 @@ def search_by_username(loginid):
                     if loginid in v:
                         user_tweets[j] = dict_item
                         j+=1
-        return {"data":user_tweets , "users_found": len(user_tweets)}
+        
+        user_list = [item for item in user_tweets.values()]
+        
+
+        return {"data":user_list , "users_found": len(user_tweets)}
     except Exception as e:
         app.logger.error("Could not retreive Tweet: "+ e.with_traceback())
         return {"error": "Error Occured! Check logs for the details"}
@@ -380,14 +392,16 @@ def reset_password(loginid):
 
 
 
-@app.route("/tweets/<username>/like", methods=['GET'])
+@app.route("/tweets/<username>/like", methods=['GET', 'POST'])
 @jwt_required()
 @cross_origin()
 def like_tweet(username):
     current_user_loginid = get_jwt_identity()
     app.logger.info(f"API: /tweets/<username>/like by user: {current_user_loginid}")
     try:
-   
+        # if request.data:
+        #     request.data = ast.literal_eval(request.data.decode(encoding="utf-8"))
+        #     print(request.data)
         if current_user_loginid == username:
             if request.form:
                 print(request.form['already-liked'])

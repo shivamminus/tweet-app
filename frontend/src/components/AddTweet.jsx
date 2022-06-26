@@ -64,7 +64,7 @@ class AddTweet extends React.Component {
                         </p>
                         <p>
                             <Editor
-                                initialValue="<p>This is the initial content of the editor</p>"
+                                initialValue="<p>Create Tweet</p>"
                                 init={{
                                     height: 300,
                                     menubar: false,

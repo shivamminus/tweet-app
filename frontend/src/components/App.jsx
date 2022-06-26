@@ -10,6 +10,9 @@ import Logout from "./Logout";
 import UserSettings from "./UserSettings";
 import NotFound from "./NotFound"
 import "./theme.css"
+import LiveSearchFilter from "./LiveSearchFilter";
+import "./App.css";
+
 
 function App() {
     const clearCacheData = () => {
@@ -38,6 +41,7 @@ function App() {
                     <Route path="/register" exact component={Register} />
                     <Route path="/logout" exact component={Logout} />
                     <Route path="/settings" exact component={UserSettings} />
+                    <Route path="/search"  exact component={LiveSearchFilter}/>
                     <Route component={NotFound} />
                 </Switch>
             </Router>

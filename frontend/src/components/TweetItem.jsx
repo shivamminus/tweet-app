@@ -5,33 +5,40 @@ import AddTweet from "./AddTweet";
 import ReplyTweet from "./ReplyTweet";
 
 function deleteTweet(tid) {
-    Axios.delete(base_url+"/api/deletetweet/" + tid, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    Axios.delete(base_url + "/tweets/" + localStorage.getItem("loginid") + "/delete/" + tid, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         console.log(res.data)
         window.location.reload();
     })
 }
-function likeTweet(tid, author) {
-    Axios.get(base_url+"/tweets/"+author+"/like", {
-        headers:
-            { Authorization: "Bearer " + localStorage.getItem("token"), 'Content-Type': 'multipart/form-data' },
-        data: { tweet_id: tid, 'already-liked':false, 'user_id': localStorage.getItem("user_id")
-    }})
-         .then(res => {
-        console.log(res.data)
-        window.location.reload();
-    })
+function likeTweet(tid, author, already_liked) {
+    var bodyFormData = new FormData()
+    bodyFormData.append("tweet_id", tid)
+    bodyFormData.append("already-liked", already_liked)
+    bodyFormData.append("user_id", localStorage.getItem("user_id"))
+    Axios.post(base_url + "/tweets/" + author + "/like", bodyFormData,
+        {
+            headers:
+                { Authorization: "Bearer " + localStorage.getItem("token"), 'Content-Type': 'multipart/form-data' },
+        },
+    )
+        .then(res => {
+            console.log(res.data)
+            window.location.reload();
+        })
 }
 
 function retweet(tid) {
-    Axios.get(base_url+"/tweets/cicada/like" + tid, {
+    Axios.get(base_url + "/tweets/cicada/like" + tid, {
         headers:
             { Authorization: "Bearer " + localStorage.getItem("token"), 'Content-Type': 'multipart/form-data' },
-        data: { tweet_id: tid, 'already-liked':true, 
-    }})
-         .then(res => {
-        console.log(res.data)
-        window.location.reload();
+        data: {
+            tweet_id: tid, 'already-liked': true,
+        }
     })
+        .then(res => {
+            console.log(res.data)
+            window.location.reload();
+        })
 }
 
 
@@ -43,9 +50,16 @@ function TweetItem(props) {
             style={{ marginTop: "2rem" }}>
             <header className="w3-container w3-opacity w3-light-gray" style={{ padding: "1rem" }}>@{props.author}
                 <span style={{ float: "right" }}>
-                    <button className="w3-button" style={{ marginRight: "2rem" }} onClick={() => likeTweet(props.id, props.author)}>
-                        Like
-                    </button>
+                    {!props.already_liked &&
+                        <button className="w3-button" style={{ marginRight: "2rem" }} onClick={() => likeTweet(props.id, props.author, props.already_liked)}>
+                            Like
+                        </button>
+                    }
+                    {props.already_liked &&
+                        <button className="w3-button" style={{ marginRight: "2rem" }} >
+                            Liked
+                        </button>
+                    }
                     <button className="w3-button" style={{ marginRight: "2rem" }} onClick={() => retweet(props.id)}>
                         Retweet
                     </button>
@@ -62,12 +76,12 @@ function TweetItem(props) {
             </div>
             <footer className="w3-container w3-center w3-large">
 
-            
+
                 <button className="w3-button" onClick={() => {
-                        document.getElementById("replyTweet").style.display = "block"
-                    }}>Reply 
-                    </button>
-                    <ReplyTweet/>
+                    document.getElementById("replyTweet").style.display = "block"
+                }}>Reply
+                </button>
+                <ReplyTweet />
             </footer>
         </div>
     );

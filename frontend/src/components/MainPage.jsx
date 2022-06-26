@@ -60,11 +60,13 @@ class MainPage extends React.Component {
                             one</p> : this.state.tweets.map((item, index) => {
                             return (
                                 <TweetItem
+
                                     id={item.id}
                                     title={item.title}
                                     content={item.tweet}
                                     author={item.loginid}
                                     isOwner={this.state.currentUser.username === item.loginid}
+                                    already_liked = {item.already_liked}
                                     key={index}
                                 />
                             );
