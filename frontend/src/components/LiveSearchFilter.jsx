@@ -10,7 +10,7 @@ class LiveSearchFilter extends Component {
             Profile: [],
         }
         this.getVal = this.getVal.bind(this)
-        this.node = React.createRef()
+        // this.node = React.createRef()
     }
     componentDidMount() {
 
@@ -20,22 +20,22 @@ class LiveSearchFilter extends Component {
         // document.removeEventListener('mousedown', this.getVal)
     }
     getVal = (e) => {
-        if (this.node.current.contains(e.target)) {
-            return
-        }
+        // if (this.node.current.contains(e.target)) {
+        //     return
+        // }
         this.setState({
             userList: [],
         })
     }
     onChange = async (e) => {
-        if(e.target.value == ''){
+        if (e.target.value === '') {
             this.setState({
 
                 Profile: [],
             })
         }
         console.log(e.target.value)
-        await axios.get(base_url + '/tweets/user/search/'+e.target.value, {
+        await axios.get(base_url + '/tweets/user/search/' + e.target.value, {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem("token")}`,
                 'Access-Control-Allow-Headers': window.location.origin,
@@ -60,36 +60,45 @@ class LiveSearchFilter extends Component {
         // })
         // this.setState({
         //     Profile: filterData,
-        // })
+        // })        
     }
+
+
+    onSearch = (event) => {
+        this.props.loginInfo(event);
+        // event.preventDefault();
+    }
+
+
     render() {
+        const { loginInfo } = this.props
         return (
-            
-                <div>
+
+            <div>
                 <div className="input-group mt-3">
                     <input
                         type="text"
                         className="form-control"
                         placeholder="Find User"
-                        ref={this.node}
+                        // ref={this.node}
                         onClick={this.getVal}
-                        onChange={(e)=>this.onChange(e)}
+                        onChange={(e) => this.onChange(e)}
                     />
                 </div>
-                <div className={this.state.Profile.length > 0 ? 'list-group': 'display-none'}>
+                <div className={this.state.Profile.length > 0 ? 'list-group' : 'display-none'}>
                     {this.state.Profile.map((item) => {
                         return (
                             <div>
-                            <a href=''
-                                className="list-group-item list-group-item-action"   
-                            >
-                                {item.loginid}
-                            </a>
+                                <a onClick={() => this.onSearch(item.loginid)}
+                                    className="list-group-item list-group-item-action"
+                                >
+                                    {item.loginid}
+                                </a>
                             </div>
                         )
                     })}
                 </div>
-                </div>
+            </div>
         )
     }
 }

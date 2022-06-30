@@ -1,8 +1,9 @@
 import React from "react";
 import Axios from "axios";
 import { base_url } from "../config";
-import AddTweet from "./AddTweet";
+
 import ReplyTweet from "./ReplyTweet";
+import Retweet from "./Retweet";
 
 function deleteTweet(tid) {
     Axios.delete(base_url + "/tweets/" + localStorage.getItem("loginid") + "/delete/" + tid, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
@@ -23,23 +24,22 @@ function likeTweet(tid, author, already_liked) {
     )
         .then(res => {
             console.log(res.data)
-            window.location.reload();
         })
 }
 
-function retweet(tid) {
-    Axios.get(base_url + "/tweets/cicada/like" + tid, {
-        headers:
-            { Authorization: "Bearer " + localStorage.getItem("token"), 'Content-Type': 'multipart/form-data' },
-        data: {
-            tweet_id: tid, 'already-liked': true,
-        }
-    })
-        .then(res => {
-            console.log(res.data)
-            window.location.reload();
-        })
-}
+// function retweet(tid) {
+//     Axios.get(base_url + "/tweets/cicada/like" + tid, {
+//         headers:
+//             { Authorization: "Bearer " + localStorage.getItem("token"), 'Content-Type': 'multipart/form-data' },
+//         data: {
+//             tweet_id: tid, 'already-liked': true,
+//         }
+//     })
+//         .then(res => {
+//             console.log(res.data)
+//             window.location.reload();
+//         })
+// }
 
 
 function TweetItem(props) {
@@ -60,9 +60,14 @@ function TweetItem(props) {
                             Liked
                         </button>
                     }
-                    <button className="w3-button" style={{ marginRight: "2rem" }} onClick={() => retweet(props.id)}>
-                        Retweet
+                    <button className="w3-button" style={{ marginRight: "2rem" }} onClick={() => {
+                        document.getElementById("replyTweet").style.display = "block"
+                    }}>Retweet
                     </button>
+                    <ReplyTweet 
+                     replyItem = { props.id}
+                    />
+
                 </span>
             </header>
             <div className="w3-container" style={{ padding: "2rem" }}>
@@ -73,15 +78,20 @@ function TweetItem(props) {
                         </button>}
                 </h2>
                 <div dangerouslySetInnerHTML={{ __html: props.content }} />
+                {/* <TweetItem /> */}
             </div>
             <footer className="w3-container w3-center w3-large">
 
 
-                <button className="w3-button" onClick={() => {
-                    document.getElementById("replyTweet").style.display = "block"
-                }}>Reply
-                </button>
-                <ReplyTweet />
+                {props.retweet.map((value, index) => {
+                    return <Retweet
+                        content={value.retweet_text}
+                        author={value.loginid}
+                    />
+                })}
+
+
+
             </footer>
         </div>
     );

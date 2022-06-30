@@ -31,7 +31,7 @@ function App() {
 
     return (
         <React.Fragment>
-            <Navbar />
+            
             <Router>
                 <Switch>
                     <Route path="/" exact>

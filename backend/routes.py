@@ -200,23 +200,28 @@ def get_all_tweets():
         # print(all_tweets)
         # tweets = Post.query.all()
         result = Post.query.join(User_mgmt, Post.user_id == User_mgmt.id).add_columns(Post.id, User_mgmt.loginid, Post.tweet, Post.stamp, Post.tweet_title, Post.like_count).filter(Post.user_id == User_mgmt.id)
+        user_id = User_mgmt.query.filter(User_mgmt.loginid == current_user_loginid).first()
         
+        # liked = Like.query.join(Post, Post.user_id == Like.user_id).filter(Post.user_id==Like.user_id).all()
+        liked = Like.query.filter(user_id.id==Like.user_id).all()
         
-        liked = Like.query.join(Post, Post.user_id == Like.user_id).filter(Post.user_id==Like.user_id).all()
 
         tweet_id_col = [i.tweet_id for i in liked]
 
         print("TWEET ID COL", tweet_id_col)
 
-        # qr = db.session.query(Post, User_mgmt).filter(Post.user_id == User_mgmt.id)
-        l2 = [{"id": i.id,"loginid":i.loginid, "title":i.tweet_title, "tweet": i.tweet, "timestamp": i.stamp, "isOwner":i.loginid == current_user_loginid, "like_count":i.like_count, "already_liked": True if i.id in tweet_id_col else False} for i in result]
-        # l1= [{"id": i.id, "tweet": i.tweet, "timestamp": i.stamp} for i in tweets]
+
+        retweet_data = Retweet.query.join(User_mgmt, User_mgmt.id == Retweet.user_id).add_columns(User_mgmt.loginid, Retweet.tweet_id, Retweet.user_id, Retweet.retweet_text).all()
+        retweet_data = [{"loginid":i.loginid, "tweet_id":i.tweet_id, "retweet_text":i.retweet_text} for i in retweet_data] 
+
+        l2 = [{"id": i.id,"loginid":i.loginid, "title":i.tweet_title, "tweet": i.tweet, "timestamp": i.stamp, "isOwner":i.loginid == current_user_loginid, "retweet": [{"loginid": k['loginid'], "retweet_text": k['retweet_text']} for k in retweet_data if k['tweet_id']==i.id],"like_count":i.like_count, "already_liked": True if i.id in tweet_id_col else False} for i in result]
+
         app.logger.info("Successfully fetched the tweets")
     
-        return {"tweets":l2}
+        return {"tweets":l2 }
     except Exception as e:
         app.logger.error("Could not fetch tweet: \n"+traceback.format_exc())
-        return {"error": {}}
+        return {"error": traceback.format_exc()}
 
 
 @app.route("/tweets/users/all", methods=['GET'])
@@ -232,6 +237,7 @@ def get_all_users():
     
     # print(all_users)
     Users = User_mgmt.query.all()
+    
     l1= [{"id": i.id, "firstname": i.firstname, "lastname": i.lastname, "image_file":i.image_file} for i in Users]
     return {"Users":l1} 
 
@@ -270,7 +276,7 @@ def delete_tweet(username, id):
 def retweet(post_id):
     current_user_loginid = get_jwt_identity()
     app.logger.info(f"API : /retweet/<post_id> by user: {current_user_loginid}")
-    if request.form:
+    if request.form:    
         
         whose_post = request.form['loginid']
         # below line fetched the Post which has id == post_id
@@ -286,8 +292,8 @@ def retweet(post_id):
                     print("result:",i)
                 x = datetime.datetime.now()
                 currentTime = str(x.strftime("%d")) +" "+ str(x.strftime("%B")) +"'"+ str(x.strftime("%y")) + " "+ str(x.strftime("%I")) +":"+ str(x.strftime("%M")) +" "+ str(x.strftime("%p"))
-
-                retweet = Retweet(tweet_id=post.id,user_id=result.id,retweet_stamp=currentTime,retweet_text=new_tweet)
+                current_user = User_mgmt.query.filter(User_mgmt.loginid == current_user_loginid).first()
+                retweet = Retweet(tweet_id=post.id,user_id=current_user.id,retweet_stamp=currentTime,retweet_text=new_tweet)
                 db.session.add(retweet)
                 db.session.commit()
 
@@ -402,21 +408,21 @@ def like_tweet(username):
         # if request.data:
         #     request.data = ast.literal_eval(request.data.decode(encoding="utf-8"))
         #     print(request.data)
-        if current_user_loginid == username:
-            if request.form:
-                print(request.form['already-liked'])
-                if request.form['already-liked'] !="false":
-                    return {"error":"already-liked"}
-            data = request.form
-            like = Like(
-                user_id = data["user_id"],
-                tweet_id = data["tweet_id"],
-                like_count = None
-            )
-            db.session.add(like)
-            db.session.commit()
+        # if current_user_loginid == username:
+        if request.form:
+            print(request.form['already-liked'])
+            if request.form['already-liked'] !="false":
+                return {"error":"already-liked"}
+        data = request.form
+        like = Like(
+            user_id = data["user_id"],
+            tweet_id = data["tweet_id"],
+            like_count = None
+        )
+        db.session.add(like)
+        db.session.commit()
 
-            return {"liked": str(like.to_dict())}
+            # return {"liked": str(like.to_dict())}
         return {"error":"invalid User"}
     except Exception as e:
         app.logger.error("Error Occured, Check logs for detail\n"+e.with_traceback())

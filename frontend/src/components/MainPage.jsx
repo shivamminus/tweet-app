@@ -3,6 +3,8 @@ import TweetItem from "./TweetItem";
 import Axios from "axios";
 import AddTweet from "./AddTweet";
 import { base_url } from "../config";
+// import LiveSearchFilter from "./LiveSearchFilter";
+import Navbar from "./Navbar";
 
 class MainPage extends React.Component {
     constructor(props){
@@ -41,8 +43,17 @@ class MainPage extends React.Component {
     }
 
     render() {
+        // const searchloginid = this.props.searchloginid;
+
+
+        // console.log("data in events map",searchloginid)
         return (
             <React.Fragment>
+                <div className='w3-bar-item'>
+                    <Navbar 
+                    // searchloginid = {searchloginid}
+                    />
+                </div>
                 <div
                     className="w3-container w3-jumbo"
                     style={{margin: "3rem", paddingLeft: "1rem"}}>
@@ -68,6 +79,7 @@ class MainPage extends React.Component {
                                     isOwner={this.state.currentUser.username === item.loginid}
                                     already_liked = {item.already_liked}
                                     key={index}
+                                    retweet = {item.retweet}
                                 />
                             );
                         })}

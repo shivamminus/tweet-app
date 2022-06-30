@@ -1,46 +1,44 @@
 import React from "react";
-import {Editor} from "@tinymce/tinymce-react/lib/cjs/main/ts";
+import { Editor } from "@tinymce/tinymce-react/lib/cjs/main/ts";
 import axios from "axios";
 import Alert from "./Alert";
 import { base_url } from "../config";
 
 class ReplyTweet extends React.Component {
-    state = {content: "<p>I have to edit this!</p>", titleErr: "", contentErr: "", formErr: ""}
+
+    state = { content: "<p>I have to edit this!</p>", titleErr: "", contentErr: "", formErr: "" }
 
     handleEditorChange = (content, editor) => {
-        this.setState({content})
+        this.setState({ content })
     }
 
     submitForm = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         if (this.state.content.length === 0) {
             this.setState(
-                {contentErr: "Add some data to the content!"}
+                { contentErr: "Add some data to the content!" }
             )
             return;
         }
-        if (document.getElementById("title").value.length === 0) {
-            this.setState(
-                {titleErr: "Add a title!"}
-            )
-            return;
-        }
-        axios.post(base_url+"/tweets/"+localStorage.getItem("user_id")+"/add", {
-            title: document.getElementById("title").value,
-            tweet: this.state.content
-        }, {
+
+
+        var bodyFormData = new FormData()
+        bodyFormData.append("retweet", this.state.content)
+        bodyFormData.append("loginid", localStorage.getItem("loginid"))
+
+        axios.post(base_url + "/retweet/" + this.props.replyItem, bodyFormData, {
             headers: {
-                'Content-Type':'Application/json',
+                'Content-Type': 'Application/json',
                 Authorization: "Bearer " + localStorage.getItem("token"),
                 "Cache-Control": "no-store, no-cache"
             }
         }).then(res => {
             if (res.data.success) {
-                window.location.reload()
+
             } else {
                 this.setState(
-                        {formErr: res.data.error }
-                    )
+                    { formErr: res.data.error }
+                )
             }
         })
     }
@@ -49,22 +47,18 @@ class ReplyTweet extends React.Component {
         return (<div className="w3-modal w3-animate-opacity" id="replyTweet">
             <div className="w3-modal-content w3-card">
                 <header className="w3-container w3-blue">
-                <span className="w3-button w3-display-topright w3-hover-none w3-hover-text-white" onClick={() => {
-                    document.getElementById("replyTweet").style.display = "none"
-                }}>X</span>
-                    <h2>Reply tweet</h2>
+                    <span className="w3-button w3-display-topright w3-hover-none w3-hover-text-white" onClick={() => {
+                        document.getElementById("replyTweet").style.display = "none"
+                    }}>X</span>
+                    <h2>Retweet</h2>
                 </header>
                 <form className="w3-container" onSubmit={this.submitForm}>
-                    {this.state.formErr.length > 0 && <Alert message={this.state.formErr}/>}
+                    {this.state.formErr.length > 0 && <Alert message={this.state.formErr} />}
                     <div className="w3-section">
-                        <p>
-                            <label htmlFor="title">Title</label>
-                            <input type="text" id="title" className="w3-input w3-border w3-margin-bottom"/>
-                            <small className="w3-text-gray">{this.state.titleErr}</small>
-                        </p>
+
                         <p>
                             <Editor
-                                initialValue="<p>This is the initial content of the editor</p>"
+                                initialValue="<p>Reply Tweet</p>"
                                 init={{
                                     height: 300,
                                     menubar: false,
@@ -87,7 +81,7 @@ class ReplyTweet extends React.Component {
                         </p>
 
                         <p>
-                            <button type="submit" className="w3-button w3-blue">Post</button>
+                            <button type="submit" className="w3-button w3-blue">Retweet</button>
                         </p>
                     </div>
                 </form>
