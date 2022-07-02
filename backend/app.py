@@ -9,7 +9,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '4YrzfpQ4kGXjuP6w'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] =False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://myrootuser:password123@localhost:3306/twitter'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://myrootuser:password123@twitter.c3ximrw7wjxs.ap-south-1.rds.amazonaws.com:3306/twitter'
 db = SQLAlchemy(app)
 CORS(app, allow_headers="http://127.0.0.1:5000")
 
@@ -35,6 +35,7 @@ from prometheus_client import REGISTRY, PROCESS_COLLECTOR, PLATFORM_COLLECTOR
 
 if __name__ == '__main__':
     # monitor(app, port=8000)
+    db = SQLAlchemy(app)
 
     def before_request():
         request.start_time = time.time()

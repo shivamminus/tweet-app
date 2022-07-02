@@ -6,7 +6,7 @@ function Home() {
             <div
                 className="w3-container w3-center w3-blue"
                 style={{ padding: "2rem" }}>
-                <h1 className="w3-jumbo">Quickr - Quick Twitter</h1>
+                <h1 className="w3-jumbo">Tweet App</h1>
                 <button
                     className="w3-button w3-pink"
                     style={{ marginRight: "1rem" }}
@@ -20,47 +20,24 @@ function Home() {
                 </button>
             </div>
 
-            <div
-                className="w3-container w3-blue"
+            <div 
+                className="w3-container w3-center w3-blue"
                 style={{ padding: "2rem", marginTop: "2rem" }}>
-                <h2>Lorem ipsum dolor sit amet</h2>
+                <h2>Hey!! Welcome to Twitter</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Integer consectetur libero nibh, non sodales urna malesuada
-                    nec. Sed tortor eros, blandit eget fringilla at, gravida a
-                    nibh. Etiam dui nulla, aliquam vitae purus a, auctor
-                    malesuada arcu. Vestibulum venenatis orci nisl, sed
-                    elementum leo tincidunt eget. Nullam convallis nisi in.
-                </p>
+                To get started, first enter your loginid and password to get started
+             </p>
             </div>
 
             <div
-                className="w3-container w3-blue"
+                className="w3-container w3-center w3-blue"
                 style={{ padding: "2rem", marginTop: "2rem" }}>
-                <h2>Lorem ipsum dolor sit amet</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Integer consectetur libero nibh, non sodales urna malesuada
-                    nec. Sed tortor eros, blandit eget fringilla at, gravida a
-                    nibh. Etiam dui nulla, aliquam vitae purus a, auctor
-                    malesuada arcu. Vestibulum venenatis orci nisl, sed
-                    elementum leo tincidunt eget. Nullam convallis nisi in.
+                <h2>About Twiiter</h2>
+                <p className="w3-center">
+                Twitter is a free social networking site where users broadcast short posts known as tweets. These tweets can contain text, videos, photos or links. To access Twitter, users need an internet connection or smart phone to use the app or website, Twitter.com.
                 </p>
             </div>
 
-            <div
-                className="w3-container w3-blue"
-                style={{ padding: "2rem", marginTop: "2rem" }}>
-                <h2>Lorem ipsum dolor sit amet</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Integer consectetur libero nibh, non sodales urna malesuada
-                    nec. Sed tortor eros, blandit eget fringilla at, gravida a
-                    nibh. Etiam dui nulla, aliquam vitae purus a, auctor
-                    malesuada arcu. Vestibulum venenatis orci nisl, sed
-                    elementum leo tincidunt eget. Nullam convallis nisi in.
-                </p>
-            </div>
         </React.Fragment>
     );
 }
