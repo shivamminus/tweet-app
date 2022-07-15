@@ -1,6 +1,7 @@
 import React from 'react';
 import Alert from "./Alert";
 import Axios from "axios";
+import { base_url } from '../config'
 
 class UserSettings extends React.Component {
 
@@ -8,37 +9,44 @@ class UserSettings extends React.Component {
 
     componentDidMount() {
         if (!localStorage.getItem("token")) {
-            window.location = "/login"
+            
         }
     }
 
     changePassword = (e) => {
         e.preventDefault();
-        Axios.post("/api/changepassword", {
-            password: document.getElementById("password").value,
-            npassword: document.getElementById("npassword").value
-        }, {
+        var formData = new FormData();
+        formData.append('new-password', document.getElementById("npassword").value)
+
+        Axios.put(base_url+"/tweets/" + localStorage.getItem('loginid') + '/forgot', formData, {
             headers: {
-                Authorization: "Bearer " + localStorage.getItem("token")
+                'Content-Type':'Application/json',
+                Authorization: "Bearer " + localStorage.getItem("token"),
+                "Cache-Control": "no-store, no-cache"
+            }
+        }).then(res => {
+            if (res.data.msg) {
+                localStorage.clear();
+                window.location = "/logout"
+            } else {
+                this.setState(
+                        {formErr: res.data.error }
+                    )
             }
         })
-            .then(res => {
-                if (res.data.error) {
-                    this.setState(
-                        {err: res.data.error}
-                    )
-                } else {
-                    alert("Password changed! Logging you out...")
-                    window.location = "/logout"
-                }
-            })
     }
 
     deleteAccount = (e) => {
         e.preventDefault();
         let x = window.confirm("Are you sure you want to delete your account? THIS CANNOT BE UNDONE. ALL OF YOUR POSTS WILL BE DELETED")
         if (x) {
-            Axios.delete("/api/deleteaccount", {headers: {Authorization: "Bearer " + localStorage.getItem("token")}})
+            Axios.delete(base_url+"/deleteAccount", {
+                headers: {
+                    'Content-Type':'Application/json',
+                    Authorization: "Bearer " + localStorage.getItem("token"),
+                    "Cache-Control": "no-store, no-cache"
+                }
+            })
                 .then(res => {
                     if (res.data.error) {
                         alert("An error occurred: " + res.data.error)
@@ -78,10 +86,10 @@ class UserSettings extends React.Component {
                                 onClick={() => this.setState({currentSetting: "main"})}>&laquo; Back
                         </button>
                         <form onSubmit={this.changePassword}>
-                            <p>
+                            {/* <p>
                                 <label htmlFor="password">Old password</label>
                                 <input type="password" id="password" className="w3-input w3-border"/>
-                            </p>
+                            </p> */}
                             <p>
                                 <label htmlFor="npassword">New password</label>
                                 <input type="password" id="npassword" className="w3-input w3-border"/>

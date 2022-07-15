@@ -199,6 +199,16 @@ def get_all_tweets():
         
         # print(all_tweets)
         # tweets = Post.query.all()
+        l2 = get_all_tweets_base(current_user_loginid)
+        app.logger.info("Successfully fetched the tweets")
+    
+        return {"tweets":l2 }
+    except Exception as e:
+        app.logger.error("Could not fetch tweet: \n"+traceback.format_exc())
+        return {"error": traceback.format_exc()}
+
+def get_all_tweets_base(current_user_loginid):
+    try:
         result = Post.query.join(User_mgmt, Post.user_id == User_mgmt.id).add_columns(Post.id, User_mgmt.loginid, Post.tweet, Post.stamp, Post.tweet_title, Post.like_count).filter(Post.user_id == User_mgmt.id)
         user_id = User_mgmt.query.filter(User_mgmt.loginid == current_user_loginid).first()
         
@@ -223,6 +233,7 @@ def get_all_tweets():
     except Exception as e:
         app.logger.error("Could not fetch tweet: \n"+traceback.format_exc())
         return {"error": traceback.format_exc()}
+
 
 
 @app.route("/tweets/users/all", methods=['GET'])
@@ -320,17 +331,24 @@ def get_all_tweets_of_a_user(loginid):
     app.logger.info(f"API :/tweets/<loginid> by user: {current_user_loginid}")
     try:
 
-        joined_result = Post.query.join(User_mgmt, Post.user_id == User_mgmt.id).add_columns(User_mgmt.id, User_mgmt.loginid, Post.tweet, Post.stamp).all()
-        l1=[{"id": i.id, "loginid":i.loginid, "tweet":i.tweet, "timestamp":i.stamp} for i in joined_result]
-        user_tweets = {}
-        j = 0
-        for dict_item in l1:
-            for k,v in dict_item.items():
-                if k == 'loginid':
-                    if loginid in v:
-                        user_tweets[j] = dict_item
-                        j+=1
-        return {"data":user_tweets,"total_records":len(user_tweets)}
+
+        response = get_all_tweets_base(current_user_loginid)
+        response = [k for k in response if k['loginid'] == loginid]
+        return {"data":response,"total_records":len(response)}
+        # print(response)
+
+        # joined_result = Post.query.join(User_mgmt, Post.user_id == User_mgmt.id).add_columns(User_mgmt.id, User_mgmt.loginid, Post.tweet, Post.stamp).all()
+        # l1=[{"id": i.id, "loginid":i.loginid, "tweet":i.tweet, "timestamp":i.stamp} for i in joined_result]
+        # user_tweets = []
+        # j = 0
+        # print(l1)
+        # for dict_item in l1:
+        #     for k,v in dict_item.items():
+        #         if k == 'loginid':
+        #             if loginid in v:
+        #                 user_tweets.append(dict_item)
+        #                 # j+=1
+        # return {"data":user_tweets,"total_records":len(user_tweets)}
     except Exception as e:
         app.logger.error("ERROR FETCHING DATA FROM DB: \n"+ e.with_traceback())
         return {"error": "Could Not find any Tweet"}
@@ -389,8 +407,9 @@ def reset_password(loginid):
         if request.form:
             new_password = request.form['new-password']
             user_found = User_mgmt.query.filter(User_mgmt.loginid == loginid).first()
-            encrypted_password = hashlib.sha256(user_found.password.encode("utf-8")).hexdigest()
-            user_found.password = encrypted_password
+            # encrypted_password = hashlib.sha256(new_password.encode("utf-8")).hexdigest()
+            password = generate_password_hash(new_password)
+            user_found.password = password
             db.session.commit()
             return {"msg":"password updated"}
         return {"error":"password could not be updated!"}
@@ -460,3 +479,26 @@ def update_tweet(username, post_id):
         app.logger.error("Something Went Wrong! Check Logs for error!\n"+e.with_traceback())
     
     return {"error":"Can not update!"}
+
+@app.route("/deleteAccount" , methods=['DELETE'])
+@cross_origin()
+@jwt_required()
+def delete_account():
+    current_user_loginid = get_jwt_identity()
+    app.logger.info("API: /tweets/deleteaccount triggered!")
+    try:
+        user = User_mgmt.query.filter(User_mgmt.loginid == current_user_loginid).first()
+
+        posts = Post.query.filter(Post.user_id == user.id).all()
+        ids = [i.id for i in posts]
+        for id in ids:
+            Timeline.query.filter(Timeline.post_id == id).delete()
+        Like.query.filter(Like.user_id == user.id).delete()
+        Retweet.query.filter(Retweet.user_id == user.id).delete()
+        Post.query.filter(Post.user_id == user.id).delete()
+        User_mgmt.query.filter(User_mgmt.id == user.id).delete()
+        db.session.commit()
+        return {"msg":f"user {current_user_loginid} deleted"}
+    except Exception as e:
+        app.logger.error("Error Occured! \n"+e.with_traceback())
+        return {"error":"Error Occured see logs for details"}

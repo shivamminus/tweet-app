@@ -6,9 +6,10 @@ import LiveSearchFilter from "./LiveSearchFilter";
 function Navbar(props) {
     
     const onUserSearch = (searchloginid) => {
-
-        props.searchloginid = searchloginid
+        // props.searchloginid = searchloginid
         console.log("hamara bajaj",searchloginid)
+
+        props.loginData(searchloginid);
         // loginInfo(event);
         // event.preventDefault();
     }

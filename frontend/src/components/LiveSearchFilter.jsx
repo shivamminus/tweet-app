@@ -14,6 +14,23 @@ class LiveSearchFilter extends Component {
     }
     componentDidMount() {
 
+        const concernedElement = document.getElementById("dropdownContext");
+        const concernedInput = document.getElementById("searchBox");
+
+        document.addEventListener("mousedown", (e) => {
+        // console.log(concernedElement, e.target);
+        if (concernedElement.contains(e.target) || concernedInput.contains(e.target)) {
+            // console.log("clicked inside");
+            if (this.state.Profile.length > 0) {
+            concernedElement.classList.remove('display-none');
+            concernedElement.classList.add('list-group');}
+            
+        } else {
+            concernedElement.classList.add('display-none');
+
+        }
+        });
+
         // document.addEventListener('mousedown', this.getVal)
     }
     componentWillUnmount() {
@@ -28,6 +45,9 @@ class LiveSearchFilter extends Component {
         })
     }
     onChange = async (e) => {
+
+        console.clear();
+
         if (e.target.value === '') {
             this.setState({
 
@@ -77,6 +97,7 @@ class LiveSearchFilter extends Component {
             <div>
                 <div className="input-group mt-3">
                     <input
+                        id="searchBox"
                         type="text"
                         className="form-control"
                         placeholder="Find User"
@@ -85,7 +106,7 @@ class LiveSearchFilter extends Component {
                         onChange={(e) => this.onChange(e)}
                     />
                 </div>
-                <div className={this.state.Profile.length > 0 ? 'list-group' : 'display-none'}>
+                <div id="dropdownContext" className={this.state.Profile.length > 0 ? 'list-group' : 'display-none'}>
                     {this.state.Profile.map((item) => {
                         return (
                             <div>
