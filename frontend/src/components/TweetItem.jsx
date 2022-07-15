@@ -45,6 +45,10 @@ function likeTweet(tid, author, already_liked) {
 function TweetItem(props) {
 
     return (
+        <div>
+            <ReplyTweet 
+                     replyItem = {props.id}
+                    />
         <div
             className="w3-card w3-border w3-border-gray w3-round-large"
             style={{ marginTop: "2rem" }}>
@@ -64,9 +68,7 @@ function TweetItem(props) {
                         document.getElementById("replyTweet"+props.id).style.display = "block"
                     }}>Retweet
                     </button>
-                    <ReplyTweet 
-                     replyItem = {props.id}
-                    />
+                    
 
                 </span>
             </header>
@@ -93,6 +95,7 @@ function TweetItem(props) {
 
 
             </footer>
+        </div>
         </div>
     );
 }

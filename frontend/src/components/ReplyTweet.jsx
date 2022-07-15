@@ -52,15 +52,15 @@ function ReplyTweet(props) {
 
 
 
-    return (<div className="w3-modal w3-animate-opacity" id={"replyTweet"+props.replyItem}>
-        <div className="w3-modal-content w3-card">
-            <header className="w3-container w3-blue">
+    return (<div className="replyTweet-Modal w3-animate-opacity" id={"replyTweet"+props.replyItem}>
+        <div className="replyTweet-Modal-content replyTweet-Modal-card">
+            <header className="replyTweet-Modal-container replyTweet-Modal-blue">
                 <span className="w3-button w3-display-topright w3-hover-none w3-hover-text-white" onClick={() => {
-                    document.getElementById("replyTweet").style.display = "none"
+                    document.getElementById("replyTweet" + props.replyItem).style.display = "none"
                 }}>X</span>
                 <h2>Retweet</h2>
             </header>
-            <form className="w3-container" onSubmit={()=>submitForm(props.replyItem)}>
+            <form className="replyTweet-Modal-container" onSubmit={()=>submitForm(props.replyItem)}>
                 {state.formErr.length > 0 && <Alert message={state.formErr} />}
                 <div className="w3-section">
 
