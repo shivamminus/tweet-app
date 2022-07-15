@@ -38,7 +38,7 @@ class Login extends Component {
                     )}
                     <form onSubmit={this.login}>
                         <p>
-                            <label htmlFor="loginid">Email</label>
+                            <label htmlFor="loginid">Login ID</label>
                             <input
                                 type="text"
                                 className="w3-input w3-border"
