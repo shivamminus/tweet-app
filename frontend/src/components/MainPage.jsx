@@ -148,7 +148,7 @@ class MainPage extends React.Component {
 
                 <div className="w3-container">
                     {this.state.tweets.length === 0 ?
-                        <p className="w3-xlarge w3-opacity" style={{marginLeft: "2rem"}}>No tweets! Create
+                        <p className="w3-xlarge " style={{marginLeft: "2rem"}}>No tweets! Create
                             one</p> : this.state.tweets.map((item, index) => {
                             return (
                                 <TweetItem

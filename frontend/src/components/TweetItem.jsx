@@ -2,7 +2,7 @@ import React from "react";
 import Axios from "axios";
 import { base_url } from "../config";
 
-import ReplyTweet from "./ReplyTweet";
+import ReplyTweet from "./ReplyTweet"
 import Retweet from "./Retweet";
 
 function deleteTweet(tid) {
@@ -45,6 +45,10 @@ function likeTweet(tid, author, already_liked) {
 function TweetItem(props) {
 
     return (
+        <div>
+            <ReplyTweet 
+                     replyItem = {props.id}
+                    />
         <div
             className="w3-card w3-border w3-border-gray w3-round-large"
             style={{ marginTop: "2rem" }}>
@@ -61,12 +65,10 @@ function TweetItem(props) {
                         </button>
                     }
                     <button className="w3-button" style={{ marginRight: "2rem" }} onClick={() => {
-                        document.getElementById("replyTweet").style.display = "block"
+                        document.getElementById("replyTweet"+props.id).style.display = "block"
                     }}>Retweet
                     </button>
-                    <ReplyTweet 
-                     replyItem = { props.id}
-                    />
+                    
 
                 </span>
             </header>
@@ -93,6 +95,7 @@ function TweetItem(props) {
 
 
             </footer>
+        </div>
         </div>
     );
 }

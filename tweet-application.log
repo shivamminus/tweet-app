@@ -1,0 +1,445 @@
+2022-07-15 19:29:31,472 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2022-07-15 19:29:31,477 INFO werkzeug MainThread :  * Restarting with stat
+2022-07-15 19:29:34,258 WARNING werkzeug MainThread :  * Debugger is active!
+2022-07-15 19:29:34,267 INFO werkzeug MainThread :  * Debugger PIN: 127-916-191
+2022-07-15 19:33:02,188 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:02] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-07-15 19:33:02,202 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:02] "[31m[1mPOST /api/checkiftokenexpire HTTP/1.1[0m" 422 -
+2022-07-15 19:33:03,304 ERROR werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:03] code 400, message Bad request syntax ('{}')
+2022-07-15 19:33:04,604 INFO werkzeug Thread-3 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:04] "[35m[1mNone /api/checkiftokenexpire HTTP/0.9[0m" HTTPStatus.BAD_REQUEST -
+2022-07-15 19:33:05,017 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:05] "[31m[1mPOST /api/checkiftokenexpire HTTP/1.1[0m" 422 -
+2022-07-15 19:33:05,034 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:05] "[31m[1mPOST /api/checkiftokenexpire HTTP/1.1[0m" 422 -
+2022-07-15 19:33:07,333 INFO werkzeug Thread-6 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:07] "[31m[1m{}OPTIONS /login HTTP/1.1[0m" 405 -
+2022-07-15 19:33:08,308 ERROR werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:08] code 400, message Bad request syntax ('{}')
+2022-07-15 19:33:08,309 INFO werkzeug Thread-5 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:08] "[35m[1mNone /api/checkiftokenexpire HTTP/0.9[0m" HTTPStatus.BAD_REQUEST -
+2022-07-15 19:33:09,162 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:09] "OPTIONS /login HTTP/1.1" 200 -
+2022-07-15 19:33:09,411 INFO application Thread-8 (process_request_thread) : API : /login triggered! 
+2022-07-15 19:33:10,716 INFO application Thread-8 (process_request_thread) : Login Successfull by user elon_says
+2022-07-15 19:33:11,625 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:11] "POST /login HTTP/1.1" 200 -
+2022-07-15 19:33:12,423 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:12] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-07-15 19:33:12,438 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:12] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-07-15 19:33:12,462 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:12] "[31m[1m{}POST /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-07-15 19:33:12,561 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:12] "[31m[1m{}OPTIONS /tweets/all HTTP/1.1[0m" 405 -
+2022-07-15 19:33:12,628 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:12] "OPTIONS /api/refreshtoken HTTP/1.1" 200 -
+2022-07-15 19:33:12,633 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:12] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-07-15 19:33:12,641 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:12] "POST /api/refreshtoken HTTP/1.1" 200 -
+2022-07-15 19:33:17,561 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:17] "[31m[1m{}OPTIONS /tweets/all HTTP/1.1[0m" 405 -
+2022-07-15 19:33:22,571 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:22] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:33:22,585 INFO application Thread-8 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:33:22,787 INFO application Thread-8 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:33:22,860 INFO werkzeug Thread-8 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:22] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:33:23,312 ERROR werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:23] code 400, message Bad request syntax ('{}')
+2022-07-15 19:33:23,313 INFO werkzeug Thread-9 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:23] "[35m[1mNone /api/checkiftokenexpire HTTP/0.9[0m" HTTPStatus.BAD_REQUEST -
+2022-07-15 19:33:35,255 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:35] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:33:35,264 INFO application Thread-10 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:33:35,443 INFO application Thread-10 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:33:35,513 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:35] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:33:43,713 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:43] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:33:43,726 INFO application Thread-10 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:33:43,925 INFO application Thread-10 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:33:44,015 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:44] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:33:48,235 INFO application Thread-10 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:33:48,436 INFO application Thread-10 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:33:48,510 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:48] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:33:52,557 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:52] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:33:52,566 INFO application Thread-10 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:33:52,780 INFO application Thread-10 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:33:52,851 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:52] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:33:56,258 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:56] "OPTIONS /retweet/22 HTTP/1.1" 200 -
+2022-07-15 19:33:56,268 INFO application Thread-10 (process_request_thread) : API : /retweet/<post_id> by user: elon_says
+2022-07-15 19:33:56,732 INFO application Thread-10 (process_request_thread) : RETWEET SUCCESSFUL by USER: elon_says of elon_says
+2022-07-15 19:33:56,734 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:56] "POST /retweet/22 HTTP/1.1" 200 -
+2022-07-15 19:33:58,410 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:58] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-07-15 19:33:58,420 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:58] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-07-15 19:33:58,505 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:58] "[31m[1m{}POST /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-07-15 19:33:58,566 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:58] "[31m[1m{}OPTIONS /tweets/all HTTP/1.1[0m" 405 -
+2022-07-15 19:33:58,660 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:58] "OPTIONS /api/refreshtoken HTTP/1.1" 200 -
+2022-07-15 19:33:58,675 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:58] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-07-15 19:33:58,685 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:33:58] "POST /api/refreshtoken HTTP/1.1" 200 -
+2022-07-15 19:34:03,350 ERROR werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:03] code 400, message Bad request syntax ('{}')
+2022-07-15 19:34:03,350 ERROR werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:03] code 400, message Bad request syntax ('{}')
+2022-07-15 19:34:03,351 INFO werkzeug Thread-10 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:03] "[35m[1mNone /api/checkiftokenexpire HTTP/0.9[0m" HTTPStatus.BAD_REQUEST -
+2022-07-15 19:34:03,352 INFO werkzeug Thread-11 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:03] "[35m[1mNone /api/refreshtoken HTTP/0.9[0m" HTTPStatus.BAD_REQUEST -
+2022-07-15 19:34:03,884 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:03] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:34:03,893 INFO application Thread-12 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:34:04,087 INFO application Thread-12 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:34:04,157 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:04] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:34:14,174 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:14] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:34:14,182 INFO application Thread-12 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:34:14,363 INFO application Thread-12 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:34:14,451 INFO werkzeug Thread-12 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:14] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:34:25,207 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:25] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:34:25,221 INFO application Thread-14 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:34:25,397 INFO application Thread-14 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:34:25,466 INFO werkzeug Thread-14 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:25] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:34:31,045 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:31] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:34:31,056 INFO application Thread-16 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:34:31,246 INFO application Thread-16 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:34:31,316 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:31] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:34:33,570 INFO application Thread-16 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:34:33,753 INFO application Thread-16 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:34:33,818 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:33] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:34:37,513 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:37] "OPTIONS /retweet/22 HTTP/1.1" 200 -
+2022-07-15 19:34:37,523 INFO application Thread-16 (process_request_thread) : API : /retweet/<post_id> by user: elon_says
+2022-07-15 19:34:37,918 INFO application Thread-16 (process_request_thread) : RETWEET SUCCESSFUL by USER: elon_says of elon_says
+2022-07-15 19:34:37,921 INFO werkzeug Thread-16 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:37] "POST /retweet/22 HTTP/1.1" 200 -
+2022-07-15 19:34:39,006 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:39] "OPTIONS /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-07-15 19:34:39,016 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:39] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-07-15 19:34:39,919 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:39] "[31m[1m{}POST /api/checkiftokenexpire HTTP/1.1[0m" 405 -
+2022-07-15 19:34:40,000 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:40] "[31m[1m{}OPTIONS /tweets/all HTTP/1.1[0m" 405 -
+2022-07-15 19:34:40,193 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:40] "OPTIONS /api/refreshtoken HTTP/1.1" 200 -
+2022-07-15 19:34:40,201 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:40] "POST /api/checkiftokenexpire HTTP/1.1" 200 -
+2022-07-15 19:34:40,207 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:40] "POST /api/refreshtoken HTTP/1.1" 200 -
+2022-07-15 19:34:45,019 INFO werkzeug Thread-18 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:45] "[31m[1m{}OPTIONS /tweets/all HTTP/1.1[0m" 405 -
+2022-07-15 19:34:48,374 ERROR werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:48] code 400, message Bad request syntax ('{}')
+2022-07-15 19:34:48,375 INFO werkzeug Thread-19 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:48] "[35m[1mNone /api/checkiftokenexpire HTTP/0.9[0m" HTTPStatus.BAD_REQUEST -
+2022-07-15 19:34:50,330 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:50] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:34:50,338 INFO application Thread-20 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:34:50,517 INFO application Thread-20 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:34:50,583 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:34:50] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:00,936 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:00] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:00,950 INFO application Thread-20 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:35:01,150 INFO application Thread-20 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:35:01,228 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:01] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:09,727 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:09] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:09,738 INFO application Thread-20 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:35:09,966 INFO application Thread-20 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:35:10,038 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:10] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:13,395 INFO application Thread-20 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:35:13,582 INFO application Thread-20 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:35:13,655 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:13] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:15,129 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:15] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:15,141 INFO application Thread-20 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:35:15,331 INFO application Thread-20 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:35:15,399 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:15] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:20,018 INFO application Thread-20 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:35:20,202 INFO application Thread-20 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:35:20,270 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:20] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:25,028 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:25] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:25,044 INFO application Thread-20 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:35:25,232 INFO application Thread-20 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:35:25,305 INFO werkzeug Thread-20 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:25] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:30,321 INFO application Thread-22 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:35:30,495 INFO application Thread-22 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:35:30,561 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:30] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:35,021 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:35] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:35,034 INFO application Thread-22 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:35:35,214 INFO application Thread-22 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:35:35,293 INFO werkzeug Thread-22 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:35] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:40,335 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:40] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:40,346 INFO application Thread-24 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:35:40,524 INFO application Thread-24 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:35:40,591 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:40] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:48,108 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:48] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:48,119 INFO application Thread-24 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:35:48,304 INFO application Thread-24 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:35:48,374 INFO werkzeug Thread-24 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:48] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:51,151 INFO application Thread-26 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:35:51,334 INFO application Thread-26 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:35:51,401 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:51] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:55,803 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:55] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:35:55,815 INFO application Thread-26 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:35:56,012 INFO application Thread-26 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:35:56,078 INFO werkzeug Thread-26 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:35:56] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:36:01,139 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:36:01] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:36:01,152 INFO application Thread-28 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:36:01,343 INFO application Thread-28 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:36:01,411 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:36:01] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:36:05,799 INFO application Thread-28 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:36:05,976 INFO application Thread-28 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:36:06,043 INFO werkzeug Thread-28 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:36:06] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:36:11,195 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:36:11] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:36:11,205 INFO application Thread-30 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:36:11,414 INFO application Thread-30 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:36:11,491 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:36:11] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:36:15,807 INFO application Thread-30 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:36:16,230 INFO application Thread-30 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:36:16,299 INFO werkzeug Thread-30 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:36:16] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:36:21,115 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:36:21] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:36:21,124 INFO application Thread-32 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:36:21,309 INFO application Thread-32 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:36:21,377 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:36:21] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:36:25,798 INFO application Thread-32 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:36:25,970 INFO application Thread-32 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:36:26,036 INFO werkzeug Thread-32 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:36:26] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:36:31,095 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:36:31] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:36:31,106 INFO application Thread-34 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:36:31,289 INFO application Thread-34 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:36:31,361 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:36:31] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:36:35,797 INFO application Thread-34 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:36:35,971 INFO application Thread-34 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:36:36,037 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:36:36] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:36:40,806 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:36:40] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:36:40,816 INFO application Thread-34 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:36:40,985 INFO application Thread-34 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:36:41,051 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:36:41] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:36:45,799 INFO application Thread-34 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:36:45,961 INFO application Thread-34 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:36:46,029 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:36:46] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:36:50,793 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:36:50] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:36:50,804 INFO application Thread-34 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:36:50,987 INFO application Thread-34 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:36:51,054 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:36:51] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:36:55,795 INFO application Thread-34 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:36:55,980 INFO application Thread-34 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:36:56,047 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:36:56] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:37:00,795 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:37:00] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:37:00,806 INFO application Thread-34 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:37:01,008 INFO application Thread-34 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:37:01,074 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:37:01] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:37:05,793 INFO application Thread-34 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:37:05,983 INFO application Thread-34 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:37:06,056 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:37:06] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:37:10,809 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:37:10] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:37:10,820 INFO application Thread-34 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:37:11,005 INFO application Thread-34 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:37:11,072 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:37:11] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:37:15,805 INFO application Thread-34 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:37:15,980 INFO application Thread-34 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:37:16,049 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:37:16] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:37:20,803 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:37:20] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:37:20,814 INFO application Thread-34 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:37:20,993 INFO application Thread-34 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:37:21,059 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:37:21] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:37:25,791 INFO application Thread-34 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:37:25,967 INFO application Thread-34 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:37:26,035 INFO werkzeug Thread-34 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:37:26] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:37:31,113 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:37:31] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:37:31,121 INFO application Thread-36 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:37:31,297 INFO application Thread-36 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:37:31,362 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:37:31] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:37:35,805 INFO application Thread-36 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:37:35,985 INFO application Thread-36 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:37:36,050 INFO werkzeug Thread-36 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:37:36] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:37:41,106 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:37:41] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:37:41,114 INFO application Thread-38 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:37:41,290 INFO application Thread-38 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:37:41,357 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:37:41] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:37:45,814 INFO application Thread-38 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:37:45,988 INFO application Thread-38 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:37:46,058 INFO werkzeug Thread-38 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:37:46] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:37:51,111 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:37:51] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:37:51,118 INFO application Thread-40 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:37:51,288 INFO application Thread-40 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:37:51,356 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:37:51] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:37:55,807 INFO application Thread-40 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:37:56,017 INFO application Thread-40 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:37:56,086 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:37:56] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:00,799 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:00] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:00,807 INFO application Thread-40 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:38:00,991 INFO application Thread-40 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:38:01,059 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:01] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:05,801 INFO application Thread-40 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:38:05,966 INFO application Thread-40 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:38:06,030 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:06] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:10,802 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:10] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:10,811 INFO application Thread-40 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:38:10,980 INFO application Thread-40 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:38:11,047 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:11] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:15,802 INFO application Thread-40 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:38:15,980 INFO application Thread-40 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:38:16,048 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:16] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:20,803 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:20] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:20,815 INFO application Thread-40 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:38:20,988 INFO application Thread-40 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:38:21,054 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:21] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:25,803 INFO application Thread-40 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:38:25,995 INFO application Thread-40 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:38:26,083 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:26] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:30,802 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:30] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:30,812 INFO application Thread-40 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:38:30,984 INFO application Thread-40 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:38:31,048 INFO werkzeug Thread-40 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:31] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:36,104 INFO application Thread-42 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:38:36,280 INFO application Thread-42 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:38:36,346 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:36] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:40,798 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:40] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:40,805 INFO application Thread-42 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:38:40,993 INFO application Thread-42 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:38:41,073 INFO werkzeug Thread-42 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:41] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:46,752 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:46] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:46,763 INFO application Thread-44 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:38:46,942 INFO application Thread-44 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:38:47,011 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:47] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:50,803 INFO application Thread-44 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:38:50,996 INFO application Thread-44 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:38:51,066 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:51] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:55,799 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:55] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:38:55,812 INFO application Thread-44 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:38:56,023 INFO application Thread-44 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:38:56,101 INFO werkzeug Thread-44 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:38:56] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:01,114 INFO application Thread-46 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:39:01,324 INFO application Thread-46 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:39:01,393 INFO werkzeug Thread-46 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:01] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:05,812 INFO werkzeug Thread-46 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:05] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:05,823 INFO application Thread-46 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:39:05,994 INFO application Thread-46 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:39:06,065 INFO werkzeug Thread-46 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:06] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:11,108 INFO application Thread-48 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:39:11,285 INFO application Thread-48 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:39:11,352 INFO werkzeug Thread-48 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:11] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:15,792 INFO werkzeug Thread-48 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:15] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:15,801 INFO application Thread-48 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:39:15,978 INFO application Thread-48 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:39:16,043 INFO werkzeug Thread-48 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:16] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:21,120 INFO werkzeug Thread-50 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:21] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:21,127 INFO application Thread-50 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:39:21,325 INFO application Thread-50 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:39:21,430 INFO werkzeug Thread-50 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:21] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:25,792 INFO application Thread-50 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:39:26,010 INFO application Thread-50 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:39:26,086 INFO werkzeug Thread-50 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:26] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:30,793 INFO werkzeug Thread-50 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:30] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:30,802 INFO application Thread-50 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:39:30,977 INFO application Thread-50 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:39:31,046 INFO werkzeug Thread-50 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:31] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:35,806 INFO werkzeug Thread-50 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:35] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:35,815 INFO application Thread-50 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:39:36,001 INFO application Thread-50 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:39:36,064 INFO werkzeug Thread-50 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:36] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:41,101 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:39:41,300 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:39:41,368 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:41] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:45,799 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:45] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:45,807 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:39:45,986 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:39:46,057 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:46] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:50,803 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:39:50,980 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:39:51,044 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:51] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:55,803 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:55] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:39:55,811 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:39:55,992 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:39:56,059 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:39:56] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:40:00,805 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:40:00,976 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:40:01,041 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:40:01] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:40:05,804 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:40:05] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:40:05,813 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:40:05,986 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:40:06,052 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:40:06] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:40:10,804 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:40:10,978 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:40:11,042 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:40:11] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:40:15,808 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:40:15] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:40:15,817 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:40:15,983 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:40:16,036 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:40:16] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:40:20,791 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:40:20,934 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:40:20,986 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:40:20] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:40:25,801 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:40:25] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:40:25,809 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:40:25,958 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:40:26,012 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:40:26] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:40:30,796 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:40:30,934 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:40:30,985 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:40:30] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:40:35,798 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:40:35] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:40:35,806 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:40:35,983 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:40:36,033 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:40:36] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:40:40,799 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:40:40,945 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:40:41,000 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:40:41] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:41:11,804 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:41:11] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:41:11,814 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:41:11,953 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:41:12,009 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:41:12] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:42:11,798 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:42:11] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:42:11,805 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:42:11,963 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:42:12,026 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:42:12] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:43:11,785 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:43:11] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:43:11,791 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:43:11,960 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:43:12,025 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:43:12] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:44:11,789 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:44:11] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:44:11,793 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:44:11,968 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:44:12,029 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:44:12] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:45:11,794 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:45:11] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:45:11,798 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:45:11,955 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:45:12,020 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:45:12] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:46:11,786 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:46:11] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:46:11,790 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:46:11,927 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:46:11,977 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:46:11] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:47:11,793 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:47:11] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:47:11,804 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:47:11,955 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:47:12,032 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:47:12] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:48:11,795 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:48:11] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:48:11,800 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:48:11,950 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:48:12,003 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:48:12] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:49:11,783 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:49:11] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:49:11,787 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:49:11,947 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:49:12,002 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:49:12] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:50:11,794 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:50:11] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:50:11,798 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:50:11,952 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:50:12,004 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:50:12] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:51:11,787 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:51:11] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:51:11,791 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:51:11,937 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:51:11,991 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:51:11] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:52:11,786 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:52:11] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:52:11,790 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:52:11,938 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:52:11,993 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:52:11] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:53:11,786 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:53:11] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:53:11,791 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:53:11,924 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:53:11,977 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:53:11] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:53:23,769 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:53:23] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:53:23,789 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:53:23,937 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:53:24,001 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:53:24] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:53:25,001 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:53:25,164 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:53:25,224 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:53:25] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:53:30,002 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:53:30] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:53:30,007 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:53:30,242 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:53:30,295 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:53:30] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:53:35,792 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:53:35] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:53:35,795 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:53:35,927 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:53:35,976 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:53:35] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:53:40,787 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:53:40,926 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:53:40,976 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:53:40] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:53:45,787 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:53:45] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:53:45,792 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:53:46,048 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:53:46,097 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:53:46] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:53:50,794 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:53:50] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:53:50,798 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:53:51,115 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:53:51,165 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:53:51] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:53:55,793 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:53:55,971 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:53:56,025 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:53:56] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:54:00,790 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:54:00] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:54:00,794 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:54:00,951 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:54:01,000 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:54:01] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:54:05,792 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:54:05,929 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:54:05,982 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:54:05] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:54:10,793 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:54:10] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:54:10,797 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:54:10,937 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:54:10,990 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:54:10] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:54:15,793 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:54:15,933 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:54:15,982 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:54:15] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:54:20,789 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:54:20] "OPTIONS /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:54:20,793 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:54:20,930 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:54:20,980 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:54:20] "GET /tweets/all HTTP/1.1" 200 -
+2022-07-15 19:54:25,791 INFO application Thread-52 (process_request_thread) : API : /tweets/all by user : elon_says
+2022-07-15 19:54:25,933 INFO application Thread-52 (process_request_thread) : Successfully fetched the tweets
+2022-07-15 19:54:25,984 INFO werkzeug Thread-52 (process_request_thread) : 127.0.0.1 - - [15/Jul/2022 19:54:25] "GET /tweets/all HTTP/1.1" 200 -

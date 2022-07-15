@@ -67,3 +67,38 @@
   color: azure;
   border-color: rgb(37, 99, 235);
 }
+
+.replyTweet-Modal {
+    z-index: 4;
+    display: none;
+    padding-top: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.replyTweet-Modal-content {
+  margin: auto;
+  background-color: #fff;
+  position: relative;
+  padding: 0;
+  outline: 0;
+  width: 900px;
+}
+
+.replyTweet-Modal-card {
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.replyTweet-Modal-container {
+  padding: 0.01em 16px;
+}
+
+.replyTweet-Modal-blue {
+  color: #fff!important;
+  background-color: #2196F3!important;
+}
