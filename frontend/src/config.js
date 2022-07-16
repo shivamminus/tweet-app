@@ -1,1 +1,1 @@
-export const base_url = "http://localhost:5000";
+export const base_url = "http://backend-prod2.us-west-1.elasticbeanstalk.com";
