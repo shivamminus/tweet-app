@@ -46,9 +46,7 @@ function TweetItem(props) {
 
     return (
         <div>
-            <ReplyTweet 
-                     replyItem = {props.id}
-                    />
+            
         <div
             className="w3-card w3-border w3-border-gray w3-round-large"
             style={{ marginTop: "2rem" }}>
@@ -96,6 +94,9 @@ function TweetItem(props) {
 
             </footer>
         </div>
+        <ReplyTweet 
+                     replyItem = {props.id}
+                    />
         </div>
     );
 }

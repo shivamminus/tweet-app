@@ -202,7 +202,7 @@ def get_all_tweets():
         l2 = get_all_tweets_base(current_user_loginid)
         app.logger.info("Successfully fetched the tweets")
     
-        return {"tweets":l2 }
+        return {"tweets":l2[::-1] }
     except Exception as e:
         app.logger.error("Could not fetch tweet: \n"+traceback.format_exc())
         return {"error": traceback.format_exc()}
@@ -224,12 +224,8 @@ def get_all_tweets_base(current_user_loginid):
         retweet_data = Retweet.query.join(User_mgmt, User_mgmt.id == Retweet.user_id).add_columns(User_mgmt.loginid, Retweet.tweet_id, Retweet.user_id, Retweet.retweet_text).all()
         retweet_data = [{"loginid":i.loginid, "tweet_id":i.tweet_id, "retweet_text":i.retweet_text} for i in retweet_data][::-1]
 
-
         l2 = [{"id": i.id,"loginid":i.loginid, "title":i.tweet_title, "tweet": i.tweet, "timestamp": i.stamp, "isOwner":i.loginid == current_user_loginid, "retweet": [{"loginid": k['loginid'], "retweet_text": k['retweet_text']} for k in retweet_data if k['tweet_id']==i.id],"like_count":i.like_count, "already_liked": True if i.id in tweet_id_col else False} for i in result]
-
-        app.logger.info("Successfully fetched the tweets")
-    
-        return {"tweets":l2[::-1] }
+        return l2
     except Exception as e:
         app.logger.error("Could not fetch tweet: \n"+traceback.format_exc())
         return {"error": traceback.format_exc()}

@@ -26,7 +26,7 @@ class MainPage extends React.Component {
         this.state.selectedUsername = '';
         clearInterval(this.state.usernameAPIInterval)
         clearInterval(this.state.allAPIInterval)
-        console.clear();
+        // console.clear();
 
         Axios.get(base_url+"/tweets/all", 
         {headers: {
@@ -47,9 +47,9 @@ class MainPage extends React.Component {
     }
 
     callAllAPIListener() {
-        console.clear();
+        // console.clear();
         this.state.allAPIInterval = setInterval(() => {
-        console.clear();
+        // console.clear();
         Axios.get(base_url+"/tweets/all", {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -57,6 +57,7 @@ class MainPage extends React.Component {
                     "Cache-Control": "no-store, no-cache"
                 }
             }).then(res => {
+                console.log("sourabh",res.data.tweets)
                 this.setState({currentUser:  {username: localStorage.getItem("loginid")}})
                 this.setState({tweets: res.data.tweets})
             })
@@ -65,7 +66,7 @@ class MainPage extends React.Component {
 
     callUsernameAPIListener(loginid) {
         this.state.usernameAPIInterval = setInterval(() => {
-        console.clear();
+        // console.clear();
         Axios.get(base_url+"/tweets/" + loginid, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -92,7 +93,7 @@ class MainPage extends React.Component {
         clearInterval(this.state.allAPIInterval)
         clearInterval(this.state.usernameAPIInterval)
         // console.log('finally data', event)
-        console.clear();
+        // console.clear();
 
         Axios.get(base_url+"/tweets/" + event, 
         {headers: {
@@ -147,7 +148,7 @@ class MainPage extends React.Component {
                 }
 
                 <div className="w3-container">
-                    {this.state.tweets.length === 0 ?
+                    {this.state.tweets.length < 1 ?
                         <p className="w3-xlarge " style={{marginLeft: "2rem"}}>No tweets! Create
                             one</p> : this.state.tweets.map((item, index) => {
                             return (

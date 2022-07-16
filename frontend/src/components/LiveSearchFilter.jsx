@@ -46,7 +46,7 @@ class LiveSearchFilter extends Component {
     }
     onChange = async (e) => {
 
-        console.clear();
+        // console.clear();
 
         if (e.target.value === '') {
             this.setState({

@@ -11,7 +11,7 @@ app.config['SECRET_KEY'] = '4YrzfpQ4kGXjuP6w'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] =False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://myrootuser:password123@twitter.c3ximrw7wjxs.ap-south-1.rds.amazonaws.com:3306/twitter'
 db = SQLAlchemy(app)
-CORS(app, allow_headers="http://127.0.0.1:5000")
+CORS(app, allow_headers="*")
 
 import socket
 
@@ -64,7 +64,7 @@ if __name__ == '__main__':
     })
     # oidc = OpenIDConnect(app)
     
-    monitor(app, path="/metrics", http_server=True, port=9090, addr="127.0.0.1")
+    # monitor(app, path="/metrics", http_server=True, port=9090, addr="127.0.0.1")
     import routes
     import modals
     try:
@@ -73,4 +73,4 @@ if __name__ == '__main__':
         db.create_all()
     except Exception as e:
         print("DB is not created!", e)
-    app.run(debug = True, host="127.0.0.1",port=5000)
+    app.run(debug = True, host="0.0.0.0",port=5000)
